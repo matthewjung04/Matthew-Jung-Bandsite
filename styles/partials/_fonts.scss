@@ -1,0 +1,68 @@
+// Import Fonts
+// Avenir Next Regular - 400
+@font-face {
+    font-family: avenir-regular;
+    src: url("../../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
+}
+
+// Avenir Next Demi - 600
+@font-face {
+    font-family: avenir-demi;
+    src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+}
+
+// Avenir Next Bold - 700
+@font-face {
+    font-family: avenir-bold;
+    src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+}
+
+// Mobile Text Styles
+@mixin header-font {
+    font-family: avenir-bold;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+@mixin subheader-font {
+    font-family: avenir-demi;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+@mixin body-font {
+    font-family: avenir-regular;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+// Desktop & Tablet Text Styles
+@mixin desktop-tablet-page-header {
+    font-family: avenir-bold;
+    font-size: 60px;
+    line-height: 68px;
+}
+
+@mixin desktop-tablet-section-header {
+    font-family: avenir-bold;
+    font-size: 36px;
+    line-height: 44px;
+}
+
+@mixin desktop-tablet-subheader {
+    font-family: avenir-demi;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+@mixin desktop-tablet-body-font {
+    font-family: avenir-regular;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+@mixin desktop-tablet-footer-font {
+    font-family: avenir-regular;
+    font-size: 14px;
+    line-height: 20px;
+}

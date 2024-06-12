@@ -1,0 +1,41 @@
+@font-face {
+  font-family: avenir-regular;
+  src: url("../../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: avenir-demi;
+  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+}
+@font-face {
+  font-family: avenir-bold;
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+}
+body {
+  background-color: #FFFFFF;
+  font-family: avenir-regular;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@media (min-width: 768px) {
+  body {
+    font-family: avenir-regular;
+    font-size: 14px;
+    line-height: 22px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
+.nav-bar {
+  background-color: #323232;
+}
+.nav-bar__list {
+  list-style: none;
+  margin: 0;
+}/*# sourceMappingURL=bio.css.map */

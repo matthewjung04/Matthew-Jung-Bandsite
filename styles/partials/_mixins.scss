@@ -1,0 +1,12 @@
+// Media Queries
+@mixin tablet {
+    @media (min-width:$tablet-min-width) and (max-width:$tablet-max-width) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width:$desktop-min-width) {
+        @content;
+    }
+}

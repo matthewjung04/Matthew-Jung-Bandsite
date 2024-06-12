@@ -2,3 +2,30 @@
 @use './partials/fonts' as *;
 @use './partials/mixins' as *;
 @use './partials/variables' as *;
+
+body {
+    background-color: $primary-light-background-color;
+    @include body-font;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    @media (min-width: $tablet-min-width) {
+        @include desktop-tablet-body-font;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $primary-light-font-color;
+}
+
+// Navigation Bar
+.nav-bar {
+    background-color: $primary-dark-background-color;
+
+     &__list {
+        list-style: none;
+        margin: 0;
+     }
+}

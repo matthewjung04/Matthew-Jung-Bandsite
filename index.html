@@ -14,10 +14,10 @@
                 <img src="./assets/Logo/Logo-bandsite.svg" alt="watermark image">
             </a>
             <ul class="nav-bar__list">
-                <li>
+                <li class="nav-bar__list__item">
                     <a href="./index.html">Biography</a>
                 </li>
-                <li>
+                <li class="nav-bar__list__item">
                     <a href="">Shows</a>
                 </li>
             </ul>
@@ -27,23 +27,23 @@
     <body>
         <main>
             <!-- Hero Section -->
-            <section>
+            <section class="hero-section">
                 <h1>The Bees Knees</h1>
             </section>
 
             <!-- About Section -->
-            <section>
-                <h2>About the Musicians</h2>
+            <section class="about-section">
+                <h2 class="about-section__title">About the Musicians</h2>
                 <img src="./assets/Images/band.jpg" alt="band photo" width="500rem">
-                <h3>
+                <h3 class="about-section__subtext">
                     “We push each other to be the best. It’s not uncommon for one of us to say ‘this needs to be
                     better, back to the drawing board’”
                 </h3>
-                <p>- Lead vocalist of The Bees Knees</p>
+                <h3 class="about-section__subtext">- Lead vocalist of The Bees Knees</h3>
 
-                <div>
-                    <h3>The Bees Knees</h3>
-                    <span>
+                <div class="about-section__content">
+                    <h3 class="about-section__content__title">The Bees Knees</h3>
+                    <span class="about-section__content__description">
                         The Bees Knees is a pop rock band originating from San Francisco, California. The band
                         consists a dynamic lineup featuring two lead vocalists, two guitarists, a bassist,
                         a keyboardist and a drummer. The band achieved its first commercial success as an unsigned
@@ -51,7 +51,7 @@
                         with both new and seasoned acts, the manager was confident the band could succeed even
                         further with more support, pushing The Bees Knees to sign with a well known record label.
                     </span>
-                    <span>
+                    <span class="about-section__content__description">
                         From there, the band has soared, gaining international recognition and ranking in the top
                         10 on the Poster Charts. New fans immediately fell in love with the band’s original and
                         organic attitude, solidifying their place as one of the hottest and fastest up and coming
@@ -63,8 +63,8 @@
             </section>
 
             <!-- Photo Gallery -->
-            <section>
-                <h2>Photo Gallery</h2>
+            <section class="photo-gallery">
+                <h2 class="photo-gallery__title">Photo Gallery</h2>
                 <div>
                     <img src="./assets/Images/Photo-gallery-1.jpg" alt="photo gallery 1" width="200px">
                     <img src="./assets/Images/Photo-gallery-2.jpg" alt="photo gallery 2" width="200px">
@@ -80,37 +80,40 @@
         </main>
 
         <footer>
-            <!-- Footer Heading -->
-            <div>
-                <h2>Get in Touch</h2>
-                <img src="./assets/Icons/SVG/Icon-instagram.svg" alt="instagram icon">
-                <img src="./assets/Icons/SVG/Icon-facebook.svg" alt="facebook icon">
-                <img src="./assets/Icons/SVG/Icon-twitter.svg" alt="twitter icon">
-                <img src="./assets/Logo/Logo-bandsite.svg" alt="bandsite watermark">
-            </div>
-            <!-- Footer Address Section -->
-            <div>
-                <p>The Bees Knees Management</p>
-                <p>503 Broadway Penthouse,</p>
-                <p>New York, NY 10012, USA</p>
-                <p>info@thebeesknees.com</p>
-            </div>
-            <!-- Footer Group Section -->
-            <div>
-                <p>Limitless Artist Group</p>
-                <p>Booking Agent for</p>
-                <p>US / South America / Japan</p>
-                <p>bookings@limitlessag.com</p>
-            </div>
-            <!-- Footer Entertainment Section -->
-            <div>
-                <p>ARCH Entertainment</p>
-                <p>Booking Agent for</p>
-                <p>UK / EU / AU</p>
-                <p>bookings@archentertainment.com</p>
+            <div class="footer-section">
+                <!-- Footer Heading -->
+                <div class="footer-section__header">
+                    <h2 class="footer-section__header__title">Get in Touch</h2>
+                    <img src="./assets/Icons/SVG/Icon-instagram.svg" alt="instagram icon">
+                    <img src="./assets/Icons/SVG/Icon-facebook.svg" alt="facebook icon">
+                    <img src="./assets/Icons/SVG/Icon-twitter.svg" alt="twitter icon">
+                </div>
+                <!-- The Bees Knees Management -->
+                <div class="footer-section__block1">
+                    <p class="footer-section__block1__description--bold">The Bees Knees Management</p>
+                    <p class="footer-section__block1__description">503 Broadway Penthouse,</p>
+                    <p class="footer-section__block1__description">New York, NY 10012, USA</p>
+                    <p class="footer-section__block1__description">info@thebeesknees.com</p>
+                </div>
+                <!-- Limitless Artist Group-->
+                <div class="footer-section__block2">
+                    <p class="footer-section__block2__description--bold">Limitless Artist Group</p>
+                    <p class="footer-section__block2__description">Booking Agent for</p>
+                    <p class="footer-section__block2__description">US / South America / Japan</p>
+                    <p class="footer-section__block2__description">bookings@limitlessag.com</p>
+                </div>
+                <!-- ARCH Entertainment-->
+                <div class="footer-section__block3">
+                    <p class="footer-section__block3__description--bold">ARCH Entertainment</p>
+                    <p class="footer-section__block3__description">Booking Agent for</p>
+                    <p class="footer-section__block3__description">UK / EU / AU</p>
+                    <p class="footer-section__block3__description">bookings@archentertainment.com</p>
+                </div>
+                <!-- Watermark Logo -->
+                <img src="./assets/Logo/Logo-bandsite.svg" alt="bandsite watermark" class="footer-section__watermark-img">
             </div>
             <!-- Footer Copyright Section -->
-            <p>Copyright The Bees Knees @ 2023 All Rights Reserved</p>
+            <p class="copyright-section">Copyright The Bees Knees @ 2023 All Rights Reserved</p>
         </footer>
     </body>
 </html>

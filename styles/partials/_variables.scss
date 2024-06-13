@@ -1,14 +1,22 @@
 // Responsive Desgin Parameters
-$mobile-min-width: 320px;
-$mobile-max-width: 767px;
+// Mobile Devices (767px and below; defined at 320px)
+$mobile-column-width: auto;
+$mobile-gutter-margin: 16px;
+$mobile-margin: 16px;
 $mobile-header-padding: 24px;
 $mobile-padding: 16px;
-
+// Tablet Devices (between 768px and 1279px; defined at 768px)
 $tablet-min-width: 768px;
 $tablet-max-width: 1279px;
+$tablet-column-width: auto;
+$tablet-gutter-margin: 24px;
+$tablet-margin: 36px;
 $tablet-header-padding: 48px;
 $tablet-padding: 36px;
-
+// Desktop Devices (greater than 1280px; defined at 1280px) 
 $desktop-min-width: 1280px;
+$desktop-column-width: 63px;
+$desktop-gutter-margin: 24px;
+$desktop-margin: auto;
 $desktop-header-padding: 48px;
 $desktop-padding: 36px;

@@ -23,9 +23,37 @@ a {
 // Navigation Bar
 .nav-bar {
     background-color: $primary-dark-background-color;
+    padding: $mobile-padding;
+    padding-bottom: 0;
 
-     &__list {
-        list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__link {
+        width: 120px;
+        height: 20px;
+        padding-bottom: $mobile-padding;
+    }
+    
+    &__list {
         margin: 0;
-     }
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+    
+        &__item {
+            width: 50vw;
+            list-style: none;
+            text-align: center;
+
+            &__link {
+                &--active {
+                    display: block;
+                    padding-bottom: 12px;
+                    border-bottom: 4px solid $primary-light-font-color;
+                }
+            }
+        }
+    }
 }

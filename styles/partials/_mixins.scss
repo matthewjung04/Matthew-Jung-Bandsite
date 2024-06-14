@@ -1,3 +1,6 @@
+@use './fonts' as *;
+@use './colors' as *;
+
 // Media Queries
 @mixin tablet {
     @media (min-width:$tablet-min-width) and (max-width:$tablet-max-width) {
@@ -9,4 +12,10 @@
     @media (min-width:$desktop-min-width) {
         @content;
     }
+}
+
+// Nav-Bar Animation
+@mixin link-hover {
+    @include hover-font;
+    border-bottom: 4px solid $primary-light-font-color;
 }

@@ -41,6 +41,10 @@ a {
         padding: 0;
         display: flex;
         flex-direction: row;
+
+        &:has(.nav-bar__list__item__link:hover) .nav-bar__list__item__link--active {
+            border-bottom: none;
+        }
     
         &__item {
             width: 50vw;
@@ -48,10 +52,19 @@ a {
             text-align: center;
 
             &__link {
+                @include inactive-font;
+                display: block;
+                padding-bottom: 12px;
+
                 &--active {
+                    @include active-font;
                     display: block;
                     padding-bottom: 12px;
                     border-bottom: 4px solid $primary-light-font-color;
+                }
+
+                &:hover {
+                    @include link-hover;
                 }
             }
         }

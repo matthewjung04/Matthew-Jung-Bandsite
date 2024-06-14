@@ -1,3 +1,5 @@
+@use './colors' as *;
+
 // Import Fonts
 // Avenir Next Regular - 400
 @font-face {
@@ -65,4 +67,26 @@
     font-family: avenir-regular;
     font-size: 14px;
     line-height: 20px;
+}
+
+// Link Text Styles
+@mixin active-font {
+    font-family: avenir-bold;
+    color: $primary-light-font-color;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+@mixin inactive-font {
+    font-family: avenir-regular;
+    color: $inactive-state-color;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+@mixin hover-font {
+    font-family: avenir-regular;
+    color: $primary-light-font-color;
+    font-size: 13px;
+    line-height: 18px;
 }

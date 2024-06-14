@@ -51,13 +51,35 @@ a {
   display: flex;
   flex-direction: row;
 }
+.nav-bar__list:has(.nav-bar__list__item__link:hover) .nav-bar__list__item__link--active {
+  border-bottom: none;
+}
 .nav-bar__list__item {
   width: 50vw;
   list-style: none;
   text-align: center;
 }
-.nav-bar__list__item__link--active {
+.nav-bar__list__item__link {
+  font-family: avenir-regular;
+  color: #E1E1E1;
+  font-size: 13px;
+  line-height: 18px;
   display: block;
   padding-bottom: 12px;
+}
+.nav-bar__list__item__link--active {
+  font-family: avenir-bold;
+  color: #FFFFFF;
+  font-size: 13px;
+  line-height: 18px;
+  display: block;
+  padding-bottom: 12px;
+  border-bottom: 4px solid #FFFFFF;
+}
+.nav-bar__list__item__link:hover {
+  font-family: avenir-regular;
+  color: #FFFFFF;
+  font-size: 13px;
+  line-height: 18px;
   border-bottom: 4px solid #FFFFFF;
 }/*# sourceMappingURL=bio.css.map */

@@ -43,6 +43,7 @@ a {
         flex-direction: row;
 
         &:has(.nav-bar__list__item__link:hover) .nav-bar__list__item__link--active {
+            
             border-bottom: none;
         }
     
@@ -68,5 +69,37 @@ a {
                 }
             }
         }
+    }
+}
+
+// Hero Section
+.hero {
+    width:auto;
+    height: 35vh;
+
+    background-image: url(../assets/Images/hero-bio.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+
+    &__title {
+        margin: 0;
+        @include header-font;
+    }
+}
+
+.about {
+
+    &__header {
+
+        &__title {
+            margin: 0;
+            padding: $mobile-padding;
+            padding: $mobile-header-padding;
+        }
+
     }
 }

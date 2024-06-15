@@ -82,12 +82,18 @@ a {
     background-size: cover;
     background-position: center;
 
-    display: flex;
-    align-items: center;
-
     &__title {
+        background-color: rgba(50, 50, 50, 0.5);
+        height: fill;
+        width: fill;
+
         margin: 0;
+        padding-left: $mobile-padding;
+        padding-top: 5rem;
+        
         @include header-font;
+        color: $primary-light-font-color;
+        ;
     }
 }
 
@@ -96,10 +102,17 @@ a {
     &__header {
 
         &__title {
+            @include header-font;
+            color: $primary-dark-font-color;
             margin: 0;
             padding: $mobile-padding;
-            padding: $mobile-header-padding;
+            padding-top: $mobile-header-padding;
         }
 
+        &__photo {
+            width: 90vw;
+            margin: $mobile-gutter-margin;
+            margin-top: 0;
+        }
     }
 }

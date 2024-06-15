@@ -91,19 +91,35 @@ a {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  display: flex;
-  align-items: center;
 }
 .hero__title {
+  background-color: rgba(50, 50, 50, 0.5);
+  height: -webkit-fill-available;
+  height: -moz-available;
+  height: fill;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: fill;
   margin: 0;
+  padding-left: 16px;
+  padding-top: 5rem;
   font-family: avenir-bold;
-  color: #FFFFFF;
   font-size: 24px;
   line-height: 32px;
+  color: #FFFFFF;
 }
 
 .about__header__title {
+  font-family: avenir-bold;
+  font-size: 24px;
+  line-height: 32px;
+  color: #323232;
   margin: 0;
   padding: 16px;
-  padding: 24px;
+  padding-top: 24px;
+}
+.about__header__photo {
+  width: 90vw;
+  margin: 16px;
+  margin-top: 0;
 }/*# sourceMappingURL=bio.css.map */

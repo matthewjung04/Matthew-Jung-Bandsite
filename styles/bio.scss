@@ -111,8 +111,20 @@ a {
 
         &__photo {
             width: 90vw;
-            margin: $mobile-gutter-margin;
-            margin-top: 0;
+            margin: 0;
+            margin-left: $mobile-margin;
+            margin-right: $mobile-margin;
+        }
+
+        &__subtext {
+            @include subheader-font;
+            margin: $mobile-margin;
+
+            &--quote {
+                @include subheader-font;
+                margin: $mobile-margin;
+                margin-top: 0;
+            }
         }
     }
 }

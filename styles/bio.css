@@ -120,6 +120,20 @@ a {
 }
 .about__header__photo {
   width: 90vw;
+  margin: 0;
+  margin-left: 16px;
+  margin-right: 16px;
+}
+.about__header__subtext {
+  font-family: avenir-demi;
+  font-size: 14px;
+  line-height: 22px;
+  margin: 16px;
+}
+.about__header__subtext--quote {
+  font-family: avenir-demi;
+  font-size: 14px;
+  line-height: 22px;
   margin: 16px;
   margin-top: 0;
 }/*# sourceMappingURL=bio.css.map */

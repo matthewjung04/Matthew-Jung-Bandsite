@@ -144,10 +144,35 @@ a {
 
             &--second {
                 @extend .about__content__description;
-               padding-right: 26px;
+                padding-right: 26px;
             }
         }
+    }
+}
 
+.photo-gallery {
+    background-color: $secondary-light-background-color;
+    padding: 0 $mobile-padding 0 $mobile-padding;
 
+    &__title {
+        @include header-font;
+        margin: 0;
+        padding: $mobile-padding;
+        padding-top: $mobile-header-padding;
+    }
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+
+        &__image {
+            width: 90vw;
+            margin-bottom: $mobile-margin;
+            filter: grayscale(1);
+
+            &:hover {
+                filter: grayscale(0)
+            } 
+        }
     }
 }

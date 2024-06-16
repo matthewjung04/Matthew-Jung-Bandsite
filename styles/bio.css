@@ -154,4 +154,29 @@ a {
 }
 .about__content__description--second {
   padding-right: 26px;
+}
+
+.photo-gallery {
+  background-color: #FAFAFA;
+  padding: 0 16px 0 16px;
+}
+.photo-gallery__title {
+  font-family: avenir-bold;
+  font-size: 24px;
+  line-height: 32px;
+  margin: 0;
+  padding: 16px;
+  padding-top: 24px;
+}
+.photo-gallery__box {
+  display: flex;
+  flex-direction: column;
+}
+.photo-gallery__box__image {
+  width: 90vw;
+  margin-bottom: 16px;
+  filter: grayscale(1);
+}
+.photo-gallery__box__image:hover {
+  filter: grayscale(0);
 }/*# sourceMappingURL=bio.css.map */

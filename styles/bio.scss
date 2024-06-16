@@ -100,7 +100,6 @@ a {
 .about {
 
     &__header {
-
         &__title {
             @include header-font;
             color: $primary-dark-font-color;
@@ -119,12 +118,36 @@ a {
         &__subtext {
             @include subheader-font;
             margin: $mobile-margin;
+            margin-bottom: 8px;
 
             &--quote {
                 @include subheader-font;
-                margin: $mobile-margin;
-                margin-top: 0;
+                margin: 0 $mobile-margin 0 $mobile-margin;
             }
         }
+    }
+
+    &__content {
+        &__title {
+            @include subheader-font;
+            margin: $mobile-margin;
+            margin-top: 0;
+            padding-top: $mobile-header-padding;
+        }
+
+        &__description {
+            width: auto;
+            margin-top: $mobile-margin;
+            margin-bottom: $mobile-margin;
+            padding-left: $mobile-padding;
+            padding-right: 28px;
+
+            &--second {
+                @extend .about__content__description;
+               padding-right: 26px;
+            }
+        }
+
+
     }
 }

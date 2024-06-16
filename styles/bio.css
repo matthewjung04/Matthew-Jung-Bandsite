@@ -129,11 +129,29 @@ a {
   font-size: 14px;
   line-height: 22px;
   margin: 16px;
+  margin-bottom: 8px;
 }
 .about__header__subtext--quote {
   font-family: avenir-demi;
   font-size: 14px;
   line-height: 22px;
+  margin: 0 16px 0 16px;
+}
+.about__content__title {
+  font-family: avenir-demi;
+  font-size: 14px;
+  line-height: 22px;
   margin: 16px;
   margin-top: 0;
+  padding-top: 24px;
+}
+.about__content__description, .about__content__description--second {
+  width: auto;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 28px;
+}
+.about__content__description--second {
+  padding-right: 26px;
 }/*# sourceMappingURL=bio.css.map */

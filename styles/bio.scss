@@ -119,12 +119,6 @@ a {
         &__subtext {
             @include subheader-font;
             margin: $mobile-margin;
-
-            &--quote {
-                @include subheader-font;
-                margin: $mobile-margin;
-                margin-top: 0;
-            }
         }
     }
 }

@@ -179,4 +179,51 @@ a {
 }
 .photo-gallery__box__image:hover {
   filter: grayscale(0);
+}
+
+.footer {
+  background-color: #323232;
+  color: #FFFFFF;
+  padding: 16px;
+}
+.footer__header__title {
+  margin: 0;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+.footer__header__icons {
+  width: 30vw;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__sub {
+  padding-top: 24px;
+}
+.footer__sub__head {
+  margin: 0;
+  font-family: avenir-demi;
+  font-size: 14px;
+  line-height: 22px;
+}
+.footer__sub__desc {
+  margin: 0;
+  padding: 16px 0 16px 0;
+}
+.footer__sub__link {
+  padding-top: 24px;
+  padding-bottom: 0;
+}
+.footer__watermark {
+  width: 120px;
+  height: 20px;
+  margin-top: 48px;
+}
+.footer__copyright {
+  margin: 0;
+  padding-top: 16px;
+  padding-bottom: 24px;
+  font-family: avenir-regular;
+  font-size: 13px;
+  line-height: 18px;
+  font-size: 11px;
 }/*# sourceMappingURL=bio.css.map */

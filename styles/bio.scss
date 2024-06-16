@@ -176,3 +176,57 @@ a {
         }
     }
 }
+
+.footer {
+    background-color: $primary-dark-background-color;
+    color: $primary-light-font-color;
+
+    padding: $mobile-padding;
+
+    &__header {
+        &__title {
+            margin: 0;
+            padding-top: $mobile-header-padding;
+            padding-bottom: $mobile-header-padding;
+        }
+
+        &__icons {
+            width: 30vw;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__sub {
+        padding-top: $mobile-header-padding;
+        
+        &__head {
+            margin: 0;
+            @include subheader-font;
+        }
+        
+        &__desc {
+            margin: 0;
+            padding: $mobile-padding 0 $mobile-padding 0;
+        }
+
+        &__link {
+            padding-top: $mobile-header-padding;
+            padding-bottom: 0;
+        }
+    }
+
+    &__watermark {
+        width: 120px;
+        height: 20px;
+        margin-top: 48px;
+    }
+
+    &__copyright {
+        margin: 0;
+        padding-top: $mobile-padding;
+        padding-bottom: $mobile-header-padding;
+        @include body-font;
+        font-size: 11px;
+    }
+}

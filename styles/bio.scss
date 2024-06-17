@@ -70,6 +70,40 @@ a {
             }
         }
     }
+
+    @include tablet {
+        padding: $tablet-padding;
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &__link {
+            width: 120px;
+            height: 20px;
+            padding-right: $tablet-gutter-padding;
+            padding-bottom: 0;
+
+            align-self: flex-start;
+        }
+
+        &__list {
+            padding-left: $tablet-gutter-padding;
+
+            &__item {
+                width: auto;
+                padding-right: $tablet-header-padding;
+
+                &__link {
+                    padding-bottom: $tablet-gutter-padding;
+
+                    &--active {
+                        padding-bottom: $tablet-gutter-padding;
+                    }
+                }
+            }
+        }
+    }
 }
 
 // Hero Section
@@ -89,11 +123,10 @@ a {
 
         margin: 0;
         padding-left: $mobile-padding;
-        padding-top: 5rem;
+        align-content: center;
         
         @include header-font;
         color: $primary-light-font-color;
-        ;
     }
 }
 

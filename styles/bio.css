@@ -83,6 +83,35 @@ a {
   line-height: 18px;
   border-bottom: 4px solid #FFFFFF;
 }
+@media (min-width: 768px) and (max-width: 1279px) {
+  .nav-bar {
+    padding: 36px;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .nav-bar__link {
+    width: 120px;
+    height: 20px;
+    padding-right: 24px;
+    padding-bottom: 0;
+    align-self: flex-start;
+  }
+  .nav-bar__list {
+    padding-left: 24px;
+  }
+  .nav-bar__list__item {
+    width: auto;
+    padding-right: 48px;
+  }
+  .nav-bar__list__item__link {
+    padding-bottom: 24px;
+  }
+  .nav-bar__list__item__link--active {
+    padding-bottom: 24px;
+  }
+}
 
 .hero {
   width: auto;
@@ -102,7 +131,7 @@ a {
   width: fill;
   margin: 0;
   padding-left: 16px;
-  padding-top: 5rem;
+  align-content: center;
   font-family: avenir-bold;
   font-size: 24px;
   line-height: 32px;

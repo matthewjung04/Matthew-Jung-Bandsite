@@ -128,6 +128,17 @@ a {
         @include header-font;
         color: $primary-light-font-color;
     }
+
+    @include tablet {
+        background-position: bottom;
+        width: auto;
+        height: 69vh;
+
+        &__title {
+            padding-left: $tablet-padding;
+            @include desktop-tablet-page-header;
+        }
+    }
 }
 
 .about {

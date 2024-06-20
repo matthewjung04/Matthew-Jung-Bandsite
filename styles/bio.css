@@ -253,10 +253,25 @@ a {
   }
   .about__content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
   .about__content__title {
+    font-family: avenir-demi;
+    font-size: 24px;
+    line-height: 32px;
+    width: 78vw;
+    padding-left: 36px;
+    padding-right: 36px;
+    padding-bottom: 36px;
+  }
+  .about__content__notes {
     display: flex;
+    flex-direction: row;
+    margin-bottom: 36px;
+  }
+  .about__content__notes__desc, .about__content__notes__desc--second {
+    margin: 0;
+    width: 37vw;
   }
 }
 
@@ -284,6 +299,13 @@ a {
 }
 .photo-gallery__box__image:hover {
   filter: grayscale(0);
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .photo-gallery__title {
+    font-family: avenir-bold;
+    font-size: 36px;
+    line-height: 44px;
+  }
 }
 
 .footer {

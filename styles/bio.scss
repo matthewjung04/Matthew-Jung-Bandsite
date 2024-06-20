@@ -301,7 +301,21 @@ a {
 
     @include tablet {
         &__title {
-            @include desktop-tablet-section-header
+            @include desktop-tablet-section-header;
+            padding: $tablet-padding;
+            padding-top: $tablet-header-padding;
+        }
+
+        &__box {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            
+            &__image {
+                width: 26vw;
+                padding-bottom: 16px;
+            }
         }
     }
 }

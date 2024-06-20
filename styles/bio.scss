@@ -142,53 +142,118 @@ a {
 }
 
 .about {
-
     &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
         &__title {
             @include header-font;
             color: $primary-dark-font-color;
+            align-self: flex-start;
             margin: 0;
-            padding: $mobile-padding;
+            padding-bottom: $mobile-padding;
             padding-top: $mobile-header-padding;
+            padding-left: $mobile-padding;
         }
 
         &__photo {
             width: 90vw;
-            margin: 0;
-            margin-left: $mobile-margin;
-            margin-right: $mobile-margin;
+            margin: 0 $mobile-margin;
         }
 
         &__subtext {
             @include subheader-font;
-            margin: $mobile-margin;
-            margin-bottom: 8px;
+            width: 90vw;
+            padding: 0 $mobile-padding;
 
             &--quote {
                 @include subheader-font;
-                margin: 0 $mobile-margin 0 $mobile-margin;
+                width: 90vw;
+                margin: 0;
+                padding: 0 $mobile-padding;
             }
         }
     }
 
     &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
         &__title {
             @include subheader-font;
-            margin: $mobile-margin;
-            margin-top: 0;
+            width: 90vw;
+            margin: 0;
             padding-top: $mobile-header-padding;
+            padding-left: $mobile-padding;
+            padding-right: $mobile-padding;
         }
 
-        &__description {
-            width: auto;
-            margin-top: $mobile-margin;
-            margin-bottom: $mobile-margin;
-            padding-left: $mobile-padding;
-            padding-right: 28px;
+        &__notes {
+            display: flex;
+            flex-direction: column;
 
-            &--second {
-                @extend .about__content__description;
-                padding-right: 26px;
+            &__desc {
+                width: 90vw;
+                align-self: center;
+                margin-top: $mobile-margin;
+                margin-bottom: $mobile-margin;
+                padding-left: $mobile-padding;
+                padding-right: $mobile-padding;
+    
+                &--second {
+                    @extend .about__content__notes__desc;
+                    width: 90vw;
+                    align-self: center;
+                    padding-left: $mobile-padding;
+                    padding-right: $mobile-padding;
+                }
+            }
+        }
+    }
+
+    @include tablet {
+
+        &__header {
+            
+            &__title {
+                @include desktop-tablet-section-header;
+                padding: $tablet-padding;
+                padding-top: $tablet-header-padding;
+                align-self: flex-start;
+            }
+
+            &__photo {
+                width: 75vw;
+                margin: 0;
+            }
+
+            &__subtext {
+                @include desktop-tablet-subheader;
+                width: 75vw;
+                margin: 0;
+                padding: $tablet-gutter-padding;
+                text-align: left;
+    
+                &--quote {
+                    @include desktop-tablet-subheader;
+                    align-self: center;
+                    width: 75vw;
+                    margin: 0;
+                    padding: $tablet-gutter-padding;
+                    padding-top: 0;
+                }
+            }
+
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: row;
+
+            &__title {
+                display: flex;
             }
         }
     }
@@ -208,6 +273,7 @@ a {
     &__box {
         display: flex;
         flex-direction: column;
+        align-items: center;
 
         &__image {
             width: 90vw;

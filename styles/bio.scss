@@ -132,7 +132,7 @@ a {
     @include tablet {
         background-position: bottom;
         width: auto;
-        height: 69vh;
+        height: 62vh;
 
         &__title {
             padding-left: $tablet-padding;
@@ -252,7 +252,7 @@ a {
 
             &__title {
                 @include desktop-tablet-subheader;
-                width: 78vw;
+                width: 75vw;
                 padding-left: $tablet-padding;
                 padding-right: $tablet-padding;
                 padding-bottom: $tablet-padding;
@@ -340,22 +340,24 @@ a {
         }
     }
 
-    &__sub {
-        padding-top: $mobile-header-padding;
-        
-        &__head {
-            margin: 0;
-            @include subheader-font;
-        }
-        
-        &__desc {
-            margin: 0;
-            padding: $mobile-padding 0 $mobile-padding 0;
-        }
-
-        &__link {
+    &__info {
+        &__sub {
             padding-top: $mobile-header-padding;
-            padding-bottom: 0;
+            
+            &__head {
+                margin: 0;
+                @include subheader-font;
+            }
+            
+            &__desc {
+                margin: 0;
+                padding: $mobile-padding 0;
+            }
+    
+            &__link {
+                padding-top: $mobile-header-padding;
+                padding-bottom: 0;
+            }
         }
     }
 
@@ -371,5 +373,53 @@ a {
         padding-bottom: $mobile-header-padding;
         @include body-font;
         font-size: 11px;
+    }
+
+    @include tablet {
+        padding: $tablet-padding;
+        padding-top: 0;
+
+        &__header {
+            display: flex;
+            flex-direction: row;
+
+            &__title {
+                @include desktop-tablet-section-header;
+                padding-top: $tablet-header-padding;
+                padding-bottom: 0;
+            }
+
+            &__icons {
+                align-self: center;
+                justify-content: space-evenly;
+                height: 25px;
+                padding-top: $tablet-header-padding;
+            }
+        }
+
+        &__info {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            &__sub {
+                padding-top: $tablet-padding;
+
+                &__desc {
+                    padding: $tablet-gutter-padding 0;
+                }
+            }
+        }
+
+        &__watermark {
+            width: 120px;
+            height: 20px;
+            padding: 0;
+            margin: 0;
+
+            position: relative;
+            bottom: 12.5rem;
+            left: 34.5rem;
+        }
     }
 }

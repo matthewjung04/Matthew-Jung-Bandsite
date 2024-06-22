@@ -172,7 +172,7 @@ a {
   .hero {
     background-position: bottom;
     width: auto;
-    height: 62vh;
+    height: 60vh;
   }
   .hero__title {
     padding-left: 36px;
@@ -181,14 +181,15 @@ a {
     line-height: 68px;
   }
 }
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 1280px) {
   .hero {
-    background-position: bottom;
+    background-size: cover;
+    background-position: center;
     width: auto;
-    height: 62vh;
+    height: 77vh;
   }
   .hero__title {
-    padding-left: 36px;
+    padding-left: 100px;
     font-family: avenir-bold;
     font-size: 60px;
     line-height: 68px;

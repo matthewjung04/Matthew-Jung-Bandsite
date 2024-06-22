@@ -168,7 +168,7 @@ a {
     @include tablet {
         background-position: bottom;
         width: auto;
-        height: 62vh;
+        height: 60vh;
 
         &__title {
             padding-left: $tablet-padding;
@@ -176,13 +176,14 @@ a {
         }
     }
 
-    @include tablet {
-        background-position: bottom;
+    @include desktop {
+        background-size: cover;
+        background-position: center;
         width: auto;
-        height: 62vh;
+        height: 77vh;
 
         &__title {
-            padding-left: $tablet-padding;
+            padding-left: 100px;
             @include desktop-tablet-page-header;
         }
     }

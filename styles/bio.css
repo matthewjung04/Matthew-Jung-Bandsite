@@ -112,10 +112,41 @@ a {
     padding-bottom: 24px;
   }
 }
+@media (min-width: 1280px) {
+  .nav-bar {
+    margin: 0;
+    padding-left: 100px;
+    padding-top: 48px;
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .nav-bar__link {
+    width: 120px;
+    height: 20px;
+    padding-right: 24px;
+    padding-bottom: 0;
+    align-self: flex-start;
+  }
+  .nav-bar__list {
+    padding-left: 24px;
+  }
+  .nav-bar__list__item {
+    width: auto;
+    padding-right: 48px;
+  }
+  .nav-bar__list__item__link {
+    padding-bottom: 24px;
+  }
+  .nav-bar__list__item__link--active {
+    padding-bottom: 24px;
+  }
+}
 
 .hero {
   width: auto;
-  height: 35vh;
+  height: 50vh;
   background-image: url(../assets/Images/hero-bio.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -136,6 +167,19 @@ a {
   font-size: 24px;
   line-height: 32px;
   color: #FFFFFF;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .hero {
+    background-position: bottom;
+    width: auto;
+    height: 62vh;
+  }
+  .hero__title {
+    padding-left: 36px;
+    font-family: avenir-bold;
+    font-size: 60px;
+    line-height: 68px;
+  }
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .hero {

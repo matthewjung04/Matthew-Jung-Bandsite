@@ -104,12 +104,48 @@ a {
             }
         }
     }
+
+    @include desktop {
+        margin: 0;
+        padding-left: 100px;
+        padding-top: $desktop-header-padding;
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &__link {
+            width: 120px;
+            height: 20px;
+            padding-right: $desktop-gutter-margin;
+            padding-bottom: 0;
+
+            align-self: flex-start;
+        }
+
+        &__list {
+            padding-left: $desktop-gutter-margin;
+
+            &__item {
+                width: auto;
+                padding-right: $desktop-header-padding;
+
+                &__link {
+                    padding-bottom: $desktop-gutter-margin;
+
+                    &--active {
+                        padding-bottom: $desktop-gutter-margin;
+                    }
+                }
+            }
+        }
+    }
 }
 
 // Hero Section
 .hero {
     width:auto;
-    height: 35vh;
+    height: 50vh;
 
     background-image: url(../assets/Images/hero-bio.jpg);
     background-repeat: no-repeat;
@@ -127,6 +163,17 @@ a {
         
         @include header-font;
         color: $primary-light-font-color;
+    }
+
+    @include tablet {
+        background-position: bottom;
+        width: auto;
+        height: 62vh;
+
+        &__title {
+            padding-left: $tablet-padding;
+            @include desktop-tablet-page-header;
+        }
     }
 
     @include tablet {

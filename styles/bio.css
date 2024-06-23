@@ -319,6 +319,63 @@ a {
     width: 37vw;
   }
 }
+@media (min-width: 1280px) {
+  .about__header__title {
+    font-family: avenir-bold;
+    font-size: 36px;
+    line-height: 44px;
+    padding: 36px;
+    padding-top: 48px;
+    padding-left: 100px;
+    align-self: flex-start;
+  }
+  .about__header__photo {
+    width: 75vw;
+    margin: 0;
+  }
+  .about__header__subtext {
+    font-family: avenir-demi;
+    font-size: 24px;
+    line-height: 32px;
+    width: 75vw;
+    margin: 0;
+    padding: 24px;
+    padding-top: 48px;
+    text-align: left;
+  }
+  .about__header__subtext--quote {
+    font-family: avenir-demi;
+    font-size: 24px;
+    line-height: 32px;
+    align-self: center;
+    width: 75vw;
+    margin: 0;
+    padding: 24px;
+    padding-top: 0;
+  }
+  .about__content {
+    display: flex;
+    flex-direction: column;
+  }
+  .about__content__title {
+    font-family: avenir-demi;
+    font-size: 24px;
+    line-height: 32px;
+    width: 75vw;
+    padding-left: 36px;
+    padding-right: 36px;
+    padding-bottom: 36px;
+  }
+  .about__content__notes {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 36px;
+  }
+  .about__content__notes__desc, .about__content__notes__desc--second {
+    margin: 0;
+    width: 36.5vw;
+  }
+}
 
 .photo-gallery {
   background-color: #FAFAFA;

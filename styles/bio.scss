@@ -318,6 +318,66 @@ a {
             }
         }
     }
+
+    @include desktop {
+        &__header {
+            &__title {
+                @include desktop-tablet-section-header;
+                padding: $desktop-padding;
+                padding-top: $desktop-header-padding;
+                padding-left: 100px;
+                align-self: flex-start;
+            }
+
+            &__photo {
+                width: 75vw;
+                margin: 0;
+            }
+
+            &__subtext {
+                @include desktop-tablet-subheader;
+                width: 75vw;
+                margin: 0;
+                padding: $desktop-gutter-padding;
+                padding-top: $desktop-header-padding;
+                text-align: left;
+    
+                &--quote {
+                    @include desktop-tablet-subheader;
+                    align-self: center;
+                    width: 75vw;
+                    margin: 0;
+                    padding: $desktop-gutter-padding;
+                    padding-top: 0;
+                }
+            }
+
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+
+            &__title {
+                @include desktop-tablet-subheader;
+                width: 75vw;
+                padding-left: $tablet-padding;
+                padding-right: $tablet-padding;
+                padding-bottom: $tablet-padding;
+            }
+
+            &__notes {
+                display: flex;
+                flex-direction: row;
+                margin-bottom: $tablet-margin;
+
+                &__desc {
+                    margin: 0;
+                    width: 36.5vw;
+                }
+            }
+        }
+    }
 }
 
 .photo-gallery {
@@ -369,7 +429,7 @@ a {
 
     @include desktop {
         padding-bottom: $desktop-padding;
-        
+
         &__title {
             @include desktop-tablet-section-header;
             padding: $desktop-padding;

@@ -19,10 +19,13 @@
   </li>
 </ul>
 
-<h2>Sprint-1 Preview</h2>
+<h2>Sprint-1 Overview</h2>
+<p>
+  An up-and-coming band has approached you to design a website for them! You've come to an agreement that this project will be delivered in 3 parts. You will be required to           build a website with all the required functionality over the next 3 sprints. Each sprint has a required deliverable. Creative mock ups and design specs will be provided, and        your task is to use the mock ups and requirements to create a fully functional live site for the band. For this first sprint, you will be focused on building a responsive           website based on the provided mock ups and design specs.
+</p>
 <ul>
   <li>
-    <p>Create biography section of a band webiste that highlights band photos using animated photo gallery</p>
+    <p>Summary: Create biography section of a band webiste that highlights band photos using animated photo gallery</p>
   </li>
   <li>
     <p>Use sass to style entire biography section</p>
@@ -33,9 +36,12 @@
 </ul>
 
 <h2>Sprint-2 Preview</h2>
+<p>
+  For this sprint, you have been provided some updated mock ups for an additional screen that will be part of the site, as well as some new features to be added. Another team is      developing some back-end functionality for the new features that you will need to use for the following sprint, so for now you will implement these features in the browser using    JavaScript until the back-end is ready. Your goal will be to make the site interactive using JavaScript, and to add a second page to the site according to the mockups and design    specs.
+</p>
 <ul>
   <li>
-    <p>Create shows section for band webiste that highlights functionality using javascript</p>
+    <p>Summary: Create shows section for band webiste that highlights functionality using javascript</p>
   </li>
   <li>
     <p>Use javascript to add live timestamped comments section and form validation</p>
@@ -46,11 +52,14 @@
 </ul>
 
 <h2>Sprint-3 Preview</h2>
+<p>
+  For this sprint, there is a provided API that you will use to get live data from the server. Your task is to make the site functional with comments and shows data retrieved from    the server, where before this data was hardcoded.
+</p>
 <ul>
   <li>
     <a href="https://unit-2-project-api-25c1595833b2.herokuapp.com/">Bandsite API</a>
   <li>
-    <p>Use APIs to get live data for javascript elements from srpint-2</p>
+    <p>Summary: Use APIs to get live data for javascript elements from srpint-2</p>
   </li>
   <li>
     <p>Use javascript to add live to comments section and forms</p>

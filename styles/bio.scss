@@ -145,7 +145,7 @@ a {
 // Hero Section
 .hero {
     width:auto;
-    height: 50vh;
+    height: 35vh;
 
     background-image: url(../assets/Images/hero-bio.jpg);
     background-repeat: no-repeat;
@@ -363,6 +363,31 @@ a {
             &__image {
                 width: 26vw;
                 padding-bottom: 16px;
+            }
+        }
+    }
+
+    @include desktop {
+        padding-bottom: $desktop-padding;
+        
+        &__title {
+            @include desktop-tablet-section-header;
+            padding: $desktop-padding;
+            padding-left: 100px;
+            padding-top: $desktop-header-padding;
+        }
+
+        &__box {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            
+            &__image {
+                width: 26vw;
+                padding-bottom: 16px;
+                padding-left: 18px;
+                padding-right: 18px
             }
         }
     }

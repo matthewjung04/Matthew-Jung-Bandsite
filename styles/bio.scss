@@ -555,4 +555,62 @@ a {
             left: 34.5rem;
         }
     }
+
+    @include desktop {
+        padding: $desktop-padding;
+        padding-top: 0;
+
+        &__header {
+            width: 100vw;
+            display: flex;
+            flex-direction: row;
+
+            &__title {
+                @include desktop-tablet-section-header;
+                padding-top: $desktop-header-padding;
+                padding-bottom: 0;
+                padding-left: 100px;
+                padding-right: 32px;
+            }
+
+            &__icons {
+                width: 16vw;
+                align-self: center;
+                justify-content: space-evenly;
+                height: 25px;
+                padding-top: $desktop-header-padding;
+            }
+        }
+
+        &__info {
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            padding-left: 100px;
+
+            &__sub {
+                padding-top: $desktop-padding;
+                padding-right: 100px;
+
+                &__desc {
+                    padding: $desktop-gutter-padding 0;
+                }
+            }
+        }
+
+        &__watermark {
+            width: 120px;
+            height: 20px;
+            padding: 0;
+            margin: 0;
+
+            position: relative;
+            bottom: 12.5rem;
+            left: 69rem;
+        }
+
+        &__copyright {
+            padding-left: 100px;
+        }
+    }
 }

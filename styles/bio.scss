@@ -70,6 +70,76 @@ a {
             }
         }
     }
+
+    @include tablet {
+        padding: $tablet-padding;
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &__link {
+            width: 120px;
+            height: 20px;
+            padding-right: $tablet-gutter-padding;
+            padding-bottom: 0;
+
+            align-self: flex-start;
+        }
+
+        &__list {
+            padding-left: $tablet-gutter-padding;
+
+            &__item {
+                width: auto;
+                padding-right: $tablet-header-padding;
+
+                &__link {
+                    padding-bottom: $tablet-gutter-padding;
+
+                    &--active {
+                        padding-bottom: $tablet-gutter-padding;
+                    }
+                }
+            }
+        }
+    }
+
+    @include desktop {
+        margin: 0;
+        padding-left: 100px;
+        padding-top: $desktop-header-padding;
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &__link {
+            width: 120px;
+            height: 20px;
+            padding-right: $desktop-gutter-margin;
+            padding-bottom: 0;
+
+            align-self: flex-start;
+        }
+
+        &__list {
+            padding-left: $desktop-gutter-margin;
+
+            &__item {
+                width: auto;
+                padding-right: $desktop-header-padding;
+
+                &__link {
+                    padding-bottom: $desktop-gutter-margin;
+
+                    &--active {
+                        padding-bottom: $desktop-gutter-margin;
+                    }
+                }
+            }
+        }
+    }
 }
 
 // Hero Section
@@ -89,36 +159,66 @@ a {
 
         margin: 0;
         padding-left: $mobile-padding;
-        padding-top: 5rem;
+        align-content: center;
         
         @include header-font;
         color: $primary-light-font-color;
-        ;
+    }
+
+    @include tablet {
+        background-position: bottom;
+        width: auto;
+        height: 60vh;
+
+        &__title {
+            padding-left: $tablet-padding;
+            @include desktop-tablet-page-header;
+        }
+    }
+
+    @include desktop {
+        background-size: cover;
+        background-position: center;
+        width: auto;
+        height: 77vh;
+
+        &__title {
+            padding-left: 100px;
+            @include desktop-tablet-page-header;
+        }
     }
 }
 
 .about {
-
     &__header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
         &__title {
             @include header-font;
             color: $primary-dark-font-color;
+            align-self: flex-start;
             margin: 0;
-            padding: $mobile-padding;
+            padding-bottom: $mobile-padding;
             padding-top: $mobile-header-padding;
+            padding-left: $mobile-padding;
         }
 
         &__photo {
             width: 90vw;
-            margin: 0;
-            margin-left: $mobile-margin;
-            margin-right: $mobile-margin;
+            margin: 0 $mobile-margin;
         }
 
         &__subtext {
             @include subheader-font;
             margin: $mobile-margin;
+
+            &--quote {
+                @include subheader-font;
+                margin: $mobile-margin;
+                margin-top: 0;
+            }
         }
     }
 }

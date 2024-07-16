@@ -284,4 +284,60 @@ a {
   .footer__copyright {
     padding-left: 100px;
   }
+}
+
+.hero {
+  width: auto;
+  height: 35vh;
+  background-image: url(../assets/Images/hero-shows.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.hero__title {
+  background-color: rgba(50, 50, 50, 0.5);
+  height: -webkit-fill-available;
+  height: -moz-available;
+  height: fill;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  width: fill;
+  margin: 0;
+  padding-left: 16px;
+  align-content: center;
+  font-family: avenir-bold;
+  font-size: 24px;
+  line-height: 32px;
+  color: #FFFFFF;
+}
+.hero__music {
+  width: auto;
+  height: 166;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .hero {
+    background-position: bottom;
+    width: auto;
+    height: 60vh;
+  }
+  .hero__title {
+    padding-left: 36px;
+    font-family: avenir-bold;
+    font-size: 60px;
+    line-height: 68px;
+  }
+}
+@media (min-width: 1280px) {
+  .hero {
+    background-size: cover;
+    background-position: center;
+    width: auto;
+    height: 77vh;
+  }
+  .hero__title {
+    padding-left: 100px;
+    font-family: avenir-bold;
+    font-size: 60px;
+    line-height: 68px;
+  }
 }/*# sourceMappingURL=shows.css.map */

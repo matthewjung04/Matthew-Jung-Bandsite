@@ -4,3 +4,54 @@
 @use './partials/variables' as *;
 @use './partials/global' as *;
 
+// Hero Section
+.hero {
+    width:auto;
+    height: 35vh;
+
+    background-image: url(../assets/Images/hero-shows.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &__title {
+        background-color: rgba(50, 50, 50, 0.5);
+        height: fill;
+        width: fill;
+
+        margin: 0;
+        padding-left: $mobile-padding;
+        align-content: center;
+        
+        @include header-font;
+        color: $primary-light-font-color;
+    }
+
+    &__music {
+        width:auto;
+        height: 166;
+    }
+
+    @include tablet {
+        background-position: bottom;
+        width: auto;
+        height: 60vh;
+
+        &__title {
+            padding-left: $tablet-padding;
+            @include desktop-tablet-page-header;
+        }
+    }
+
+    @include desktop {
+        background-size: cover;
+        background-position: center;
+        width: auto;
+        height: 77vh;
+
+        &__title {
+            padding-left: 100px;
+            @include desktop-tablet-page-header;
+        }
+    }
+}

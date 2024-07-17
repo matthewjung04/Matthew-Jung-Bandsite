@@ -7,7 +7,7 @@
 // Hero Section
 .hero {
     width:auto;
-    height: 35vh;
+    height: auto;
 
     background-image: url(../assets/Images/hero-shows.jpg);
     background-repeat: no-repeat;
@@ -20,16 +20,20 @@
         width: fill;
 
         margin: 0;
-        padding-left: $mobile-padding;
+        padding: $mobile-padding;
         align-content: center;
         
         @include header-font;
         color: $primary-light-font-color;
-    }
 
-    &__music {
-        width:auto;
-        height: 166;
+        &__desc {
+            @include subheader-font;
+        }
+
+        &__music {
+            padding-top: $mobile-padding;
+            padding-bottom: $mobile-padding;
+        }
     }
 
     @include tablet {

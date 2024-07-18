@@ -42,11 +42,25 @@
     @include tablet {
         background-position: bottom;
         width: auto;
-        height: 60vh;
+        height: auto;
 
-        &__title {
-            padding-left: $tablet-padding;
-            @include desktop-tablet-page-header;
+        &__content {
+            padding: $tablet-padding;
+
+            &__desc {
+                @include desktop-tablet-subheader;
+                
+            }
+
+            &__title {
+                @include desktop-tablet-page-header;
+                margin-top: 0;
+            }
+            
+            &__music {
+                width: 60%;
+                padding-bottom: $tablet-padding;
+            }
         }
     }
 

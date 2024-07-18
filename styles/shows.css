@@ -326,13 +326,25 @@ a {
   .hero {
     background-position: bottom;
     width: auto;
-    height: 60vh;
+    height: auto;
   }
-  .hero__title {
-    padding-left: 36px;
+  .hero__content {
+    padding: 36px;
+  }
+  .hero__content__desc {
+    font-family: avenir-demi;
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .hero__content__title {
     font-family: avenir-bold;
     font-size: 60px;
     line-height: 68px;
+    margin-top: 0;
+  }
+  .hero__content__music {
+    width: 60%;
+    padding-bottom: 36px;
   }
 }
 @media (min-width: 1280px) {

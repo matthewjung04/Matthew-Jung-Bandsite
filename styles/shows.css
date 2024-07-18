@@ -294,7 +294,7 @@ a {
   background-size: cover;
   background-position: center;
 }
-.hero__title {
+.hero__content {
   background-color: rgba(50, 50, 50, 0.5);
   height: -webkit-fill-available;
   height: -moz-available;
@@ -305,17 +305,20 @@ a {
   margin: 0;
   padding: 16px;
   align-content: center;
+}
+.hero__content__title {
   font-family: avenir-bold;
   font-size: 24px;
   line-height: 32px;
   color: #FFFFFF;
 }
-.hero__title__desc {
+.hero__content__desc {
   font-family: avenir-demi;
   font-size: 14px;
   line-height: 22px;
+  color: #FFFFFF;
 }
-.hero__title__music {
+.hero__content__music {
   padding-top: 16px;
   padding-bottom: 16px;
 }

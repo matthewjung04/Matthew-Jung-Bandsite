@@ -94,3 +94,35 @@
         }
     }
 }
+
+.shows {
+
+    &__title {
+        @include header-font;
+        padding: $mobile-padding;
+    }
+
+    &__table {
+
+        &__header {
+            @include table-header-font;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            padding-left: $mobile-padding;
+        }
+
+        &__data {
+            display: flex;
+            flex-direction: column;
+            padding-left: $mobile-padding;
+            padding-bottom: $mobile-padding;
+
+            &--date {
+                @extend .shows__table__data;
+                font-family: avenir-bold;
+            }
+        }
+    }
+    
+}

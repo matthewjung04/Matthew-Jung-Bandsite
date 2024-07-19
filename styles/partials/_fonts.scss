@@ -38,6 +38,13 @@
     line-height: 18px;
 }
 
+@mixin table-header-font {
+    font-family: avenir-demi;
+    font-size: 13px;
+    line-height: 18px;
+    color: $secondary-font-color;
+}
+
 // Desktop & Tablet Text Styles
 @mixin desktop-tablet-page-header {
     font-family: avenir-bold;

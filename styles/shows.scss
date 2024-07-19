@@ -68,11 +68,29 @@
         background-size: cover;
         background-position: center;
         width: auto;
-        height: 77vh;
+        height: 65vh;
 
-        &__title {
-            padding-left: 100px;
-            @include desktop-tablet-page-header;
+        &__content {
+            padding: $desktop-padding 100px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &__desc {
+                @include desktop-tablet-subheader;
+                
+            }
+
+            &__title {
+                @include desktop-tablet-page-header;
+                margin-top: 0;
+            }
+            
+            &__music {
+                width: 40%;
+                padding-bottom: $desktop-padding;
+            }
         }
     }
 }

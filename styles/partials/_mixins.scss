@@ -21,11 +21,6 @@
     border-bottom: 4px solid $primary-light-font-color;
 }
 
-// Dividers
-@mixin dividers {
-    border: 1px solid $inactive-state-color;
-}
-
 // Tables
 @mixin desktop_tablet_table_padding {
     padding: 24px 18px;

@@ -34,17 +34,18 @@ function addRow() {
 for (i=0; i<shows.dates.length; i++) {
 
     newRow = addRow();
+
     let headerDate = document.createElement('th');
-    headerDate.classList.add('shows__table__header');
+    headerDate.classList.add('shows__table__header--first');
     headerDate.innerText = 'DATE'
     newRow.appendChild(headerDate);
 
     let dateColumn = document.createElement('td');
-    dateColumn.classList.add('shows__table__data--date');
+    dateColumn.classList.add('shows__table__data--first');
     dateColumn.innerText = shows.dates[i];
     newRow.appendChild(dateColumn);
 
-    newRow = addRow();
+    
     let headerVenue = document.createElement('th');
     headerVenue.classList.add('shows__table__header');
     headerVenue.innerText = 'VENUE'
@@ -55,7 +56,7 @@ for (i=0; i<shows.dates.length; i++) {
     venueColumn.innerText = shows.venues[i];
     newRow.appendChild(venueColumn);
 
-    newRow = addRow();
+    
     let headerLocation = document.createElement('th');
     headerLocation.classList.add('shows__table__header');
     headerLocation.innerText = 'LOCATION'
@@ -65,4 +66,11 @@ for (i=0; i<shows.dates.length; i++) {
     locationColumn.classList.add('shows__table__data');
     locationColumn.innerText = shows.location;
     newRow.appendChild(locationColumn);
+
+    let newColumn = document.createElement('td');
+    newColumn.classList.add('shows__table__data--last');
+    newRow.appendChild(newColumn);
+    let button = document.createElement('button');
+    button.innerText = 'BUY TICKETS'
+    newColumn.appendChild(button);
 }

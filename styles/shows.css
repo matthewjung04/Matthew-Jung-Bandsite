@@ -382,8 +382,13 @@ a {
   font-size: 24px;
   line-height: 32px;
   padding: 16px;
+  margin-bottom: 0;
 }
-.shows__table__header {
+.shows__table {
+  padding-bottom: 16px;
+  width: 100%;
+}
+.shows__table__header, .shows__table__header--first {
   font-family: avenir-demi;
   font-size: 13px;
   line-height: 18px;
@@ -393,12 +398,19 @@ a {
   text-align: left;
   padding-left: 16px;
 }
-.shows__table__data, .shows__table__data--date {
+.shows__table__header--first {
+  padding-top: 16px;
+}
+.shows__table__data, .shows__table__data--last, .shows__table__data--first {
   display: flex;
   flex-direction: column;
   padding-left: 16px;
   padding-bottom: 16px;
 }
-.shows__table__data--date {
+.shows__table__data--first {
   font-family: avenir-bold;
+}
+.shows__table__data--last {
+  width: 100%;
+  border-bottom: 1px solid #E1E1E1;
 }/*# sourceMappingURL=shows.css.map */

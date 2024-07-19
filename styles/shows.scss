@@ -100,9 +100,12 @@
     &__title {
         @include header-font;
         padding: $mobile-padding;
+        margin-bottom: 0;
     }
 
     &__table {
+        padding-bottom: $mobile-padding;
+        width: 100%;
 
         &__header {
             @include table-header-font;
@@ -110,6 +113,11 @@
             flex-direction: column;
             text-align: left;
             padding-left: $mobile-padding;
+
+            &--first {
+                @extend .shows__table__header;
+                padding-top: $mobile-padding;
+            }
         }
 
         &__data {
@@ -118,10 +126,17 @@
             padding-left: $mobile-padding;
             padding-bottom: $mobile-padding;
 
-            &--date {
+            &--first {
                 @extend .shows__table__data;
                 font-family: avenir-bold;
             }
+
+            &--last {
+                @extend .shows__table__data;
+                width: 100%;
+                border-bottom: 1px solid $inactive-state-color;
+            }
+            
         }
     }
     

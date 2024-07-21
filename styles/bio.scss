@@ -320,9 +320,46 @@
         @include header-font;
         padding: $mobile-padding;
         padding-top: 0;
+        padding-bottom: 0;
     }
 
-    &--default {
+    &__main {
+        padding: $mobile-padding;
+        padding-top: 0;
+        padding-bottom: $mobile-header-padding;
+
+        display: flex;
+        flex-direction: row;
+
+        &__photo {
+            @include mobile_avatar;
+        }
+
+        &__form {
+            padding-left: $mobile-padding;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            &__label {
+                @include label-font;
+                line-height: 20px;
+                padding-bottom: 4px;
+
+                &--text {
+                    @extend .comments__main__form__label;
+                    padding-top: $mobile-padding;
+                }
+            }
+
+            &__input {
+                @include body-font;
+                width: auto;
+            }
+        }
+    }
+
+    &__default {
         padding: $mobile-padding;
         padding-top: 0;
         padding-bottom: $mobile-header-padding;
@@ -357,27 +394,17 @@
                     padding-bottom: $mobile-padding;
 
                     &--name {
-                        font-family: avenir-bold;
-                        font-size: 12px;
-                        line-height: 20px;
+                        @include label-font;
+                        color: $primary-dark-font-color;
                         margin: 0;
                     }
     
                     &--date {
-                        font-family: avenir-demi;
+                        @extend .comments__default__box__text__head--name;
                         color: $secondary-font-color;
-                        font-size: 12px;
-                        line-height: 20px;
-                        margin: 0;
                     }
                 }
             }
-
-
-
-            // &__text {
-            // }
         }
-
     }
 }

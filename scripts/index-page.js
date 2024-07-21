@@ -28,16 +28,16 @@ const defaultComments = {
     ]
 };
 
-let defaultSection = document.querySelector('.comments--default');
+let defaultSection = document.querySelector('.comments__default');
 // avatarImage.src = "../assets/Images/Mohan-muruge.jpg";
 
 function addComment() {
     let newComment = document.createElement('div');
-    newComment.classList.add('comments--default__box');
+    newComment.classList.add('comments__default__box');
     defaultSection.appendChild(newComment);
 
     let avatarImage = document.createElement('img');
-    avatarImage.classList.add('comments--default__box__image');
+    avatarImage.classList.add('comments__default__box__image');
     newComment.appendChild(avatarImage);
 
     return newComment;
@@ -45,7 +45,7 @@ function addComment() {
 
 function addTextBox(newComment) {
     let commentBox = document.createElement('div');
-    commentBox.classList.add('comments--default__box__text');
+    commentBox.classList.add('comments__default__box__text');
     newComment.appendChild(commentBox);
 
     return commentBox
@@ -58,21 +58,21 @@ for (i=0; i<defaultComments.users.length; i++) {
     newTextBox = addTextBox(newComment);
 
     let titleBox = document.createElement('h1');
-    titleBox.classList.add('comments--default__box__text__head');
+    titleBox.classList.add('comments__default__box__text__head');
     newTextBox.appendChild(titleBox);
 
     let commentName = document.createElement('h2');
-    commentName.classList.add('comments--default__box__text__head--name');
+    commentName.classList.add('comments__default__box__text__head--name');
     commentName.innerText = defaultComments.users[i];
     titleBox.appendChild(commentName);
 
     let commentDate = document.createElement('h2');
-    commentDate.classList.add('comments--default__box__text__head--date');
+    commentDate.classList.add('comments__default__box__text__head--date');
     commentDate.innerText = defaultComments.dates[i];
     titleBox.appendChild(commentDate);
 
     let commentText = document.createElement('span');
-    commentText.classList.add('comments--default__box__text__desc');
+    commentText.classList.add('comments__default__box__text__desc');
     commentText.innerText = defaultComments.comments[i];
     newTextBox.appendChild(commentText);
 }

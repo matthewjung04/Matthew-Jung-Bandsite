@@ -595,13 +595,49 @@ a {
   line-height: 32px;
   padding: 16px;
   padding-top: 0;
+  padding-bottom: 0;
 }
-.comments--default {
+.comments__main {
+  padding: 16px;
+  padding-top: 0;
+  padding-bottom: 24px;
+  display: flex;
+  flex-direction: row;
+}
+.comments__main__photo {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+}
+.comments__main__form {
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.comments__main__form__label, .comments__main__form__label--text {
+  font-family: avenir-demi;
+  color: #AFAFAF;
+  font-size: 12px;
+  line-height: 20px;
+  line-height: 20px;
+  padding-bottom: 4px;
+}
+.comments__main__form__label--text {
+  padding-top: 16px;
+}
+.comments__main__form__input {
+  font-family: avenir-regular;
+  font-size: 13px;
+  line-height: 18px;
+  width: auto;
+}
+.comments__default {
   padding: 16px;
   padding-top: 0;
   padding-bottom: 24px;
 }
-.comments--default__box {
+.comments__default__box {
   padding-top: 16px;
   padding-bottom: 16px;
   border-top: 1px solid #E1E1E1;
@@ -609,20 +645,20 @@ a {
   display: flex;
   flex-direction: row;
 }
-.comments--default__box__image {
+.comments__default__box__image {
   border-radius: 50%;
   width: 36px;
   height: 36px;
   background-color: #E1E1E1;
 }
-.comments--default__box__text {
+.comments__default__box__text {
   display: flex;
   flex-direction: column;
   align-items: self-start;
   width: 80%;
   padding-left: 16px;
 }
-.comments--default__box__text__head {
+.comments__default__box__text__head {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -630,16 +666,14 @@ a {
   margin: 0;
   padding-bottom: 16px;
 }
-.comments--default__box__text__head--name {
-  font-family: avenir-bold;
-  font-size: 12px;
-  line-height: 20px;
-  margin: 0;
-}
-.comments--default__box__text__head--date {
+.comments__default__box__text__head--name, .comments__default__box__text__head--date {
   font-family: avenir-demi;
   color: #AFAFAF;
   font-size: 12px;
   line-height: 20px;
+  color: #323232;
   margin: 0;
+}
+.comments__default__box__text__head--date {
+  color: #AFAFAF;
 }/*# sourceMappingURL=bio.css.map */

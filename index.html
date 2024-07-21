@@ -89,7 +89,17 @@
 
             <section class="comments">
                 <h1 class="comments__title">Join The Conversation</h1>
-                <article class="comments--default"></article>
+                <article class="comments__main">
+                    <img class="comments__main__photo" src="./assets/Images/Mohan-muruge.jpg" alt="avatar-photo">
+                    <form class="comments__main__form">
+                        <label class="comments__main__form__label" for="name">NAME</label>
+                        <input type="text" class="comments__main__form__input" id="name" value="Enter your name">
+
+                        <label class="comments__main__form__label--text" for="message">COMMENT</label>
+                        <textarea class="comments__main__form__input" id="message" rows="4">Add a new comment</textarea>
+                    </form>
+                </article>
+                <article class="comments__default"></article>
             </section>
 
             <script src="./scripts/index-page.js"></script>

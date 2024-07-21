@@ -52,6 +52,13 @@
     color: $primary-light-font-color;
 }
 
+@mixin label-font {
+    font-family: avenir-demi;
+    color: $secondary-font-color;
+    font-size: 12px;
+    line-height: 20px;
+}
+
 // Desktop & Tablet Text Styles
 @mixin desktop-tablet-page-header {
     font-family: avenir-bold;

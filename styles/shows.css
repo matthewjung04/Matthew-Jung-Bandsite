@@ -427,8 +427,4 @@ a {
 .shows__table__data--last {
   width: auto;
   border-bottom: 1px solid #E1E1E1;
-}
-
-tr :active {
-  background-color: #E1E1E1;
 }/*# sourceMappingURL=shows.css.map */

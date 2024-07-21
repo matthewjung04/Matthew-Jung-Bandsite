@@ -8,6 +8,10 @@ textarea:focus, input:focus {
     outline: 1px solid $primary-dark-background-color;
 }
 
+.comment__error {
+    outline: 1px solid $error-state;
+}
+
 // Hero Section
 .hero {
     width:auto;
@@ -254,6 +258,7 @@ textarea:focus, input:focus {
         @include header-font;
         margin: 0;
         padding: $mobile-padding;
+        padding-left: 0;
         padding-top: $mobile-header-padding;
     }
 

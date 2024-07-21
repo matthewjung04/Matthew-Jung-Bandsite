@@ -96,7 +96,6 @@
 }
 
 .shows {
-
     &__title {
         @include header-font;
         padding: $mobile-padding;
@@ -105,6 +104,7 @@
 
     &__table {
         padding-bottom: $mobile-padding;
+        padding-right: $mobile-padding;
         width: 100%;
 
         &__header {
@@ -124,7 +124,20 @@
             display: flex;
             flex-direction: column;
             padding-left: $mobile-padding;
+            padding-right: $mobile-padding;
             padding-bottom: $mobile-padding;
+
+            &__button {
+                @extend .shows__table__data;
+                @include button-font;
+                height: 40px;
+                border-radius: 4px;
+                background-color: $primary-dark-background-color;
+
+                padding: 0;
+                justify-content: center;
+                align-items: center;
+            }
 
             &--first {
                 @extend .shows__table__data;
@@ -133,11 +146,14 @@
 
             &--last {
                 @extend .shows__table__data;
-                width: 100%;
+                width: auto;
                 border-bottom: 1px solid $inactive-state-color;
             }
-            
         }
     }
     
+}
+
+tr :active {
+    background-color: $inactive-state-color;
 }

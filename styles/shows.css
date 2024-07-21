@@ -386,6 +386,7 @@ a {
 }
 .shows__table {
   padding-bottom: 16px;
+  padding-right: 16px;
   width: 100%;
 }
 .shows__table__header, .shows__table__header--first {
@@ -401,16 +402,33 @@ a {
 .shows__table__header--first {
   padding-top: 16px;
 }
-.shows__table__data, .shows__table__data--last, .shows__table__data--first {
+.shows__table__data, .shows__table__data--last, .shows__table__data--first, .shows__table__data__button {
   display: flex;
   flex-direction: column;
   padding-left: 16px;
+  padding-right: 16px;
   padding-bottom: 16px;
+}
+.shows__table__data__button {
+  font-family: avenir-bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: #FFFFFF;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #323232;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
 }
 .shows__table__data--first {
   font-family: avenir-bold;
 }
 .shows__table__data--last {
-  width: 100%;
+  width: auto;
   border-bottom: 1px solid #E1E1E1;
+}
+
+tr :active {
+  background-color: #E1E1E1;
 }/*# sourceMappingURL=shows.css.map */

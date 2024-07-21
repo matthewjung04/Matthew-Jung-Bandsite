@@ -26,6 +26,10 @@ let table = document.querySelector('.shows__table');
 
 function addRow() {
     let newRow = document.createElement('tr');
+    newRow.style = 'cursor: pointer';
+    newRow.onclick = clickHandler;
+    newRow.onmouseover = hoverHandler;
+    newRow.onmouseout = hoverAwayHandler;
     table.appendChild(newRow);
     return newRow;
 }
@@ -34,6 +38,7 @@ function addRow() {
 for (i=0; i<shows.dates.length; i++) {
 
     newRow = addRow();
+    // newRow.setAttribute("id", "row-" + i+1);
 
     let headerDate = document.createElement('th');
     headerDate.classList.add('shows__table__header--first');
@@ -45,7 +50,6 @@ for (i=0; i<shows.dates.length; i++) {
     dateColumn.innerText = shows.dates[i];
     newRow.appendChild(dateColumn);
 
-    
     let headerVenue = document.createElement('th');
     headerVenue.classList.add('shows__table__header');
     headerVenue.innerText = 'VENUE'
@@ -55,7 +59,6 @@ for (i=0; i<shows.dates.length; i++) {
     venueColumn.classList.add('shows__table__data');
     venueColumn.innerText = shows.venues[i];
     newRow.appendChild(venueColumn);
-
     
     let headerLocation = document.createElement('th');
     headerLocation.classList.add('shows__table__header');
@@ -70,7 +73,32 @@ for (i=0; i<shows.dates.length; i++) {
     let newColumn = document.createElement('td');
     newColumn.classList.add('shows__table__data--last');
     newRow.appendChild(newColumn);
+
     let button = document.createElement('button');
+    button.type = 'button';
+    button.style = 'cursor: pointer';
+    button.classList.add('shows__table__data__button');
     button.innerText = 'BUY TICKETS'
     newColumn.appendChild(button);
 }
+
+// Add hover and click events for shows table
+const rows = document.querySelector('tr');
+
+function hoverHandler (event) {
+    event.currentTarget.style.backgroundColor = '#FAFAFA';
+}
+
+function hoverAwayHandler (event) {
+    event.currentTarget.style.backgroundColor = '#FFFFFF';
+}
+
+function clickHandler (event) {
+    event.currentTarget.style.backgroundColor = '#E1E1E1';
+    console.log(event.target.parentElement);
+    event.target.parentElement.style.backgroundColor = '#E1E1E1';
+}
+
+rows.addEventListener('mouseover', hoverHandler);
+rows.addEventListener('mouseout', hoverAwayHandler);
+rows.addEventListener('click', clickHandler);

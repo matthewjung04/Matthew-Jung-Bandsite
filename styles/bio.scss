@@ -490,4 +490,57 @@ textarea:focus, input:focus {
             }
         }
     }
+
+    @include desktop {
+        padding: $desktop-padding;
+
+        &__title {
+            @include desktop-tablet-section-header;
+            padding-left: 100px;
+        }
+
+        &__main {
+            padding: 30vw;
+            padding-top: 0;
+            padding-bottom: $desktop-header-padding;
+            width: 50%;  
+
+            &__photo {
+                @include desktop_tablet_avatar;
+            }
+
+            &__form {
+                padding-left: $desktop-padding;
+            }
+
+        }
+
+        &__default {
+            padding: 30vw;
+            padding-top: 0;
+            padding-bottom: $desktop-padding;
+            width: 50%;
+
+            &__box {
+                &__image {
+                    @include desktop_tablet_avatar;
+                    background-color: $inactive-state-color;
+                }
+    
+                &__text {
+                    padding-left: $desktop-padding;
+    
+                    &__head {
+                        &--name {
+                            font-size: 14px;
+                        }
+    
+                        &--date {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

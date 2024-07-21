@@ -91,10 +91,11 @@ for (i=0; i<defaultComments.users.length; i++) {
 
 const form = document.getElementById('myForm');
 
+
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // // Console log form values and confimation for debugging
+    // Console log form values and confimation for debugging
     // console.log('Form Submitted');
     // console.log(e.target.name.value);
     // console.log(e.target.message.value);
@@ -124,16 +125,26 @@ form.addEventListener('submit', function(e) {
             commentName.classList.add('comments__default__box__text__head--name');
             commentName.innerText = name;
             titleBox.appendChild(commentName);
-        
+            
             let commentDate = document.createElement('h2');
             commentDate.classList.add('comments__default__box__text__head--date');
-            commentDate.innerText = '2024';
-            titleBox.appendChild(commentDate);
-        
+            postedDate = new Date();
+
+            function dates () {
+                var str = "";
+                var currentDate = new Date();
+                str += Math.abs(currentDate.getMinutes()-postedDate.getMinutes()) + " minutes ago";
+
+                commentDate.innerText = str;
+                titleBox.appendChild(commentDate);
+            }
+            setInterval(dates, 1000);
+
             let commentText = document.createElement('span');
             commentText.classList.add('comments__default__box__text__desc');
             commentText.innerText = message;
             newTextBox.appendChild(commentText);
+
         }else if (message.split(" ").length<2) {
             alert('Comment must contain more than 1 word');
             textArea.classList.add('comment__error');

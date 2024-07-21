@@ -31,8 +31,6 @@ function addRow() {
     let newRow = document.createElement('tr');
     newRow.style = 'cursor: pointer';
     newRow.onclick = clickHandler;
-    newRow.onmouseover = hoverHandler;
-    newRow.onmouseout = hoverAwayHandler;
     table.appendChild(newRow);
     return newRow;
 }
@@ -42,7 +40,7 @@ for (i=0; i<shows.dates.length; i++) {
 
     // Add a new row to the table
     newRow = addRow();
-    // newRow.setAttribute("id", "row-" + i+1);
+    // newRow.setAttribute("id", "row-1-" + i+1);
 
     // Create a row heading for date
     let headerDate = document.createElement('th');
@@ -97,26 +95,13 @@ for (i=0; i<shows.dates.length; i++) {
 // Add hover and click events for shows table based on mouse events
 
 // Select all 'tr' elements in html
-const rows = document.querySelector('tr');
+let rows = document.querySelector('tr');
 
-// Behaviour for when mouse hovers over the row
-function hoverHandler (event) {
-    event.currentTarget.style.backgroundColor = '#FAFAFA';
-}
-
-// Resets the row when mouse hovers away from the row
-function hoverAwayHandler (event) {
-    event.currentTarget.style.backgroundColor = '#FFFFFF';
-}
-
-// Behaviour for when row is 'clicked'
 function clickHandler (event) {
-    event.currentTarget.style.backgroundColor = '#E1E1E1';
-    console.log(event.target.parentElement);
+    // console.log(event.target.parentElement);
     event.target.parentElement.style.backgroundColor = '#E1E1E1';
+    rows.removeEventListener('click', clickHandler);
 }
 
-// Add event litseners to the 'tr' elements
-rows.addEventListener('mouseover', hoverHandler);
-rows.addEventListener('mouseout', hoverAwayHandler);
+// Add event litsener to the 'tr' elements for click event
 rows.addEventListener('click', clickHandler);

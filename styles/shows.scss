@@ -4,6 +4,28 @@
 @use './partials/variables' as *;
 @use './partials/global' as *;
 
+table :hover {
+    background-color: $secondary-light-background-color;
+    color: $primary-dark-font-color;
+}
+
+table {
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+tr {
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        padding-top: $tablet-padding;
+        border-bottom: 1px solid $inactive-state-color;
+    }
+}
+
 // Hero Section
 .hero {
     width:auto;
@@ -148,6 +170,32 @@
                 @extend .shows__table__data;
                 width: auto;
                 border-bottom: 1px solid $inactive-state-color;
+            }
+        }
+    }
+
+    @include tablet {
+        &__title {
+            @include desktop-tablet-section-header;
+            padding: $tablet-padding;
+            margin-bottom: 0;
+        }
+
+        &__table {
+            padding-bottom: $tablet-padding;
+            padding-right: $tablet-padding;
+            padding-left: $tablet-padding;
+
+
+            &__header {
+                visibility: hidden;
+                width: 0;
+            }
+            
+            &__data {
+                width: 20vw;
+                padding-left: 0;
+                padding-right: 0;
             }
         }
     }

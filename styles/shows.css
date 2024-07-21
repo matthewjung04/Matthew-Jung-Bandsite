@@ -286,6 +286,28 @@ a {
   }
 }
 
+table :hover {
+  background-color: #FAFAFA;
+  color: #323232;
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  table {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  tr {
+    display: flex;
+    flex-direction: row;
+    padding-top: 36px;
+    border-bottom: 1px solid #E1E1E1;
+  }
+}
+
 .hero {
   width: auto;
   height: auto;
@@ -427,4 +449,27 @@ a {
 .shows__table__data--last {
   width: auto;
   border-bottom: 1px solid #E1E1E1;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .shows__title {
+    font-family: avenir-bold;
+    font-size: 36px;
+    line-height: 44px;
+    padding: 36px;
+    margin-bottom: 0;
+  }
+  .shows__table {
+    padding-bottom: 36px;
+    padding-right: 36px;
+    padding-left: 36px;
+  }
+  .shows__table__header, .shows__table__header--first {
+    visibility: hidden;
+    width: 0;
+  }
+  .shows__table__data, .shows__table__data__button, .shows__table__data--first, .shows__table__data--last {
+    width: 20vw;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }/*# sourceMappingURL=shows.css.map */

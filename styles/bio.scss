@@ -4,6 +4,10 @@
 @use './partials/variables' as *;
 @use './partials/global' as *;
 
+textarea:focus, input:focus {
+    outline: 1px solid $primary-dark-background-color;
+}
+
 // Hero Section
 .hero {
     width:auto;
@@ -355,6 +359,30 @@
             &__input {
                 @include body-font;
                 width: auto;
+                height: 36px;
+                padding-left: 12px;
+                border: 1px solid $inactive-state-color;
+                border-radius: 4px;
+                background-color: $secondary-light-background-color;
+
+                &--text {
+                    @extend .comments__main__form__input;
+                    height: auto;
+                    padding-top: 12px;
+                }
+            }
+
+            &__button {
+                @include button-font;
+                height: 40px;
+                border-radius: 4px;
+                background-color: $primary-dark-background-color;
+                cursor: pointer;
+
+                padding: 0;
+                margin-top: $mobile-margin;
+                justify-content: center;
+                align-items: center;
             }
         }
     }

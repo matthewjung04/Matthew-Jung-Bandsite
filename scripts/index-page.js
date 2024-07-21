@@ -43,6 +43,19 @@ function addComment() {
     return newComment;
 }
 
+function postComment() {
+    let newComment = document.createElement('div');
+    newComment.classList.add('comments__default__box');
+    defaultSection.appendChild(newComment);
+
+    let avatarImage = document.createElement('img');
+    avatarImage.src = '../assets/Images/Mohan-muruge.jpg';
+    avatarImage.classList.add('comments__default__box__image');
+    newComment.appendChild(avatarImage);
+
+    return newComment;
+}
+
 function addTextBox(newComment) {
     let commentBox = document.createElement('div');
     commentBox.classList.add('comments__default__box__text');
@@ -76,3 +89,35 @@ for (i=0; i<defaultComments.users.length; i++) {
     commentText.innerText = defaultComments.comments[i];
     newTextBox.appendChild(commentText);
 }
+
+const form = document.getElementById('myForm');
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // // Console log form values and confimation for debugging
+    // console.log('Form Submitted');
+    // console.log(e.target.name.value);
+    // console.log(e.target.message.value);
+
+    newComment = postComment();
+    newTextBox = addTextBox(newComment);
+
+    let titleBox = document.createElement('h1');
+    titleBox.classList.add('comments__default__box__text__head');
+    newTextBox.appendChild(titleBox);
+
+    let commentName = document.createElement('h2');
+    commentName.classList.add('comments__default__box__text__head--name');
+    commentName.innerText = e.target.name.value;
+    titleBox.appendChild(commentName);
+
+    let commentDate = document.createElement('h2');
+    commentDate.classList.add('comments__default__box__text__head--date');
+    commentDate.innerText = '2024';
+    titleBox.appendChild(commentDate);
+
+    let commentText = document.createElement('span');
+    commentText.classList.add('comments__default__box__text__desc');
+    commentText.innerText = e.target.message.value;
+    newTextBox.appendChild(commentText);
+})

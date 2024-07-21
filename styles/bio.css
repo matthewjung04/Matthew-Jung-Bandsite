@@ -286,6 +286,10 @@ a {
   }
 }
 
+textarea:focus, input:focus {
+  outline: 1px solid #323232;
+}
+
 .hero {
   width: auto;
   height: 35vh;
@@ -626,11 +630,34 @@ a {
 .comments__main__form__label--text {
   padding-top: 16px;
 }
-.comments__main__form__input {
+.comments__main__form__input, .comments__main__form__input--text {
   font-family: avenir-regular;
   font-size: 13px;
   line-height: 18px;
   width: auto;
+  height: 36px;
+  padding-left: 12px;
+  border: 1px solid #E1E1E1;
+  border-radius: 4px;
+  background-color: #FAFAFA;
+}
+.comments__main__form__input--text {
+  height: auto;
+  padding-top: 12px;
+}
+.comments__main__form__button {
+  font-family: avenir-bold;
+  font-size: 14px;
+  line-height: 20px;
+  color: #FFFFFF;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #323232;
+  cursor: pointer;
+  padding: 0;
+  margin-top: 16px;
+  justify-content: center;
+  align-items: center;
 }
 .comments__default {
   padding: 16px;

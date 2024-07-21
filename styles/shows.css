@@ -298,8 +298,22 @@ table :hover {
     flex-wrap: wrap;
   }
 }
+@media (min-width: 1280px) {
+  table {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
 
 @media (min-width: 768px) and (max-width: 1279px) {
+  tr {
+    display: flex;
+    flex-direction: row;
+    padding-top: 36px;
+  }
+}
+@media (min-width: 1280px) {
   tr {
     display: flex;
     flex-direction: row;
@@ -315,6 +329,14 @@ table :hover {
     visibility: visible;
     padding-left: 36px;
     width: 15vw;
+    border: none;
+  }
+}
+@media (min-width: 1280px) {
+  #header1, #header2, #header3 {
+    visibility: visible;
+    padding-left: 36px;
+    width: 10.5vw;
     border: none;
   }
 }
@@ -480,6 +502,36 @@ table :hover {
   }
   .shows__table__data, .shows__table__data__button, .shows__table__data--first, .shows__table__data--last {
     width: 20vw;
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom: 1px solid #E1E1E1;
+  }
+}
+@media (min-width: 1280px) {
+  .shows {
+    display: flex;
+    flex-direction: row;
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+  .shows__title {
+    font-family: avenir-bold;
+    font-size: 36px;
+    line-height: 44px;
+    padding: 100px;
+    margin-bottom: 0;
+  }
+  .shows__table {
+    padding-bottom: 36px;
+    padding-right: 36px;
+    padding-left: 100px;
+  }
+  .shows__table__header, .shows__table__header--first {
+    visibility: hidden;
+    width: 0;
+  }
+  .shows__table__data, .shows__table__data__button, .shows__table__data--first, .shows__table__data--last {
+    width: 14vw;
     padding-left: 0;
     padding-right: 0;
     border-bottom: 1px solid #E1E1E1;

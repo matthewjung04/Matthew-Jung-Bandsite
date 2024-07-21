@@ -15,15 +15,27 @@ table {
         flex-direction: row;
         flex-wrap: wrap;
     }
+
+    @include desktop {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }
 
 tr {
     @include tablet {
         display: flex;
         flex-direction: row;
-        padding-top: $tablet-padding;
-        
+        padding-top: $tablet-padding; 
     }
+
+    @include desktop {
+        display: flex;
+        flex-direction: row;
+        padding-top: $desktop-padding; 
+    }
+
 }
 
 #header1, #header2, #header3 {
@@ -35,6 +47,14 @@ tr {
         width: 15vw;
         border: none;
     }
+
+    @include desktop {
+        visibility: visible;
+        padding-left: $desktop-padding;
+        width: 10.5vw;
+        border: none;
+    }
+
 }
 
 // Hero Section
@@ -212,4 +232,35 @@ tr {
         }
     }
     
+    @include desktop {
+        display: flex;
+        flex-direction: row;
+        padding-top: $desktop-padding;
+        padding-bottom: $desktop-padding;
+
+        &__title {
+            @include desktop-tablet-section-header;
+            padding: 100px;
+            margin-bottom: 0;
+        }
+
+        &__table {
+            padding-bottom: $desktop-padding;
+            padding-right: $desktop-padding;
+            padding-left: 100px;
+
+
+            &__header {
+                visibility: hidden;
+                width: 0;
+            }
+            
+            &__data {
+                width: 14vw;
+                padding-left: 0;
+                padding-right: 0;
+                border-bottom: 1px solid $inactive-state-color;
+            }
+        }
+    }
 }

@@ -2,144 +2,14 @@
 @use './partials/fonts' as *;
 @use './partials/mixins' as *;
 @use './partials/variables' as *;
+@use './partials/global' as *;
 
-body {
-    background-color: $primary-light-background-color;
-    @include body-font;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-    @media (min-width: $tablet-min-width) {
-        @include desktop-tablet-body-font;
-    }
+textarea:focus, input:focus {
+    outline: 1px solid $primary-dark-background-color;
 }
 
-a {
-    text-decoration: none;
-    color: $primary-light-font-color;
-}
-
-// Navigation Bar
-.nav-bar {
-    background-color: $primary-dark-background-color;
-    padding: $mobile-padding;
-    padding-bottom: 0;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    &__link {
-        width: 120px;
-        height: 20px;
-        padding-bottom: $mobile-padding;
-    }
-    
-    &__list {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: row;
-
-        &:has(.nav-bar__list__item__link:hover) .nav-bar__list__item__link--active {
-            
-            border-bottom: none;
-        }
-    
-        &__item {
-            width: 50vw;
-            list-style: none;
-            text-align: center;
-
-            &__link {
-                @include inactive-font;
-                display: block;
-                padding-bottom: 12px;
-
-                &--active {
-                    @include active-font;
-                    display: block;
-                    padding-bottom: 12px;
-                    border-bottom: 4px solid $primary-light-font-color;
-                }
-
-                &:hover {
-                    @include link-hover;
-                }
-            }
-        }
-    }
-
-    @include tablet {
-        padding: $tablet-padding;
-        padding-bottom: 0;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        &__link {
-            width: 120px;
-            height: 20px;
-            padding-right: $tablet-gutter-padding;
-            padding-bottom: 0;
-
-            align-self: flex-start;
-        }
-
-        &__list {
-            padding-left: $tablet-gutter-padding;
-
-            &__item {
-                width: auto;
-                padding-right: $tablet-header-padding;
-
-                &__link {
-                    padding-bottom: $tablet-gutter-padding;
-
-                    &--active {
-                        padding-bottom: $tablet-gutter-padding;
-                    }
-                }
-            }
-        }
-    }
-
-    @include desktop {
-        margin: 0;
-        padding-left: 100px;
-        padding-top: $desktop-header-padding;
-        padding-bottom: 0;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        &__link {
-            width: 120px;
-            height: 20px;
-            padding-right: $desktop-gutter-margin;
-            padding-bottom: 0;
-
-            align-self: flex-start;
-        }
-
-        &__list {
-            padding-left: $desktop-gutter-margin;
-
-            &__item {
-                width: auto;
-                padding-right: $desktop-header-padding;
-
-                &__link {
-                    padding-bottom: $desktop-gutter-margin;
-
-                    &--active {
-                        padding-bottom: $desktop-gutter-margin;
-                    }
-                }
-            }
-        }
-    }
+.comment__error {
+    outline: 1px solid $error-state;
 }
 
 // Hero Section
@@ -388,6 +258,7 @@ a {
         @include header-font;
         margin: 0;
         padding: $mobile-padding;
+        padding-left: 0;
         padding-top: $mobile-header-padding;
     }
 
@@ -453,164 +324,223 @@ a {
     }
 }
 
-.footer {
-    background-color: $primary-dark-background-color;
-    color: $primary-light-font-color;
-
-    padding: $mobile-padding;
-
-    &__header {
-        &__title {
-            margin: 0;
-            padding-top: $mobile-header-padding;
-            padding-bottom: $mobile-header-padding;
-        }
-
-        &__icons {
-            width: 30vw;
-            display: flex;
-            justify-content: space-between;
-        }
+.comments {
+    &__title {
+        @include header-font;
+        padding: $mobile-padding;
+        padding-top: 0;
+        padding-bottom: 0;
     }
 
-    &__info {
-        &__sub {
-            padding-top: $mobile-header-padding;
-            
-            &__head {
-                margin: 0;
-                @include subheader-font;
-            }
-            
-            &__desc {
-                margin: 0;
-                padding: $mobile-padding 0;
-            }
-    
-            &__link {
-                padding-top: $mobile-header-padding;
-                padding-bottom: 0;
-            }
-        }
-    }
-
-    &__watermark {
-        width: 120px;
-        height: 20px;
-        margin-top: 48px;
-    }
-
-    &__copyright {
-        margin: 0;
-        padding-top: $mobile-padding;
+    &__main {
+        padding: $mobile-padding;
+        padding-top: 0;
         padding-bottom: $mobile-header-padding;
-        @include body-font;
-        font-size: 11px;
+
+        display: flex;
+        flex-direction: row;
+
+        &__photo {
+            @include mobile_avatar;
+        }
+
+        &__form {
+            padding-left: $mobile-padding;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            &__label {
+                @include label-font;
+                line-height: 20px;
+                padding-bottom: 4px;
+
+                &--text {
+                    @extend .comments__main__form__label;
+                    padding-top: $mobile-padding;
+                }
+            }
+
+            &__input {
+                @include body-font;
+                width: auto;
+                height: 36px;
+                padding-left: 12px;
+                border: 1px solid $inactive-state-color;
+                border-radius: 4px;
+                background-color: $secondary-light-background-color;
+
+                &--text {
+                    @extend .comments__main__form__input;
+                    height: auto;
+                    padding-top: 12px;
+                }
+            }
+
+            &__button {
+                @include button-font;
+                height: 40px;
+                border-radius: 4px;
+                background-color: $primary-dark-background-color;
+                cursor: pointer;
+
+                padding: 0;
+                margin-top: $mobile-margin;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    &__default {
+        padding: $mobile-padding;
+        padding-top: 0;
+        padding-bottom: $mobile-header-padding;
+
+        &__box {
+            padding-top: $mobile-padding;
+            padding-bottom: $mobile-padding;
+            border-top: 1px solid $inactive-state-color;
+            border-bottom: 1px solid $inactive-state-color;
+
+            display: flex;
+            flex-direction: row;
+            
+            &__image {
+                @include mobile_avatar;
+                background-color: $inactive-state-color;
+            }
+
+            &__text {
+                display: flex;
+                flex-direction: column;
+                align-items: self-start;
+                width: 80%;
+                padding-left: $mobile-padding;
+
+                &__head {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 100%;
+                    margin: 0;
+                    padding-bottom: $mobile-padding;
+
+                    &--name {
+                        @include label-font;
+                        color: $primary-dark-font-color;
+                        margin: 0;
+                    }
+    
+                    &--date {
+                        @extend .comments__default__box__text__head--name;
+                        color: $secondary-font-color;
+                    }
+                }
+            }
+        }
     }
 
     @include tablet {
         padding: $tablet-padding;
-        padding-top: 0;
 
-        &__header {
-            display: flex;
-            flex-direction: row;
-
-            &__title {
-                @include desktop-tablet-section-header;
-                padding-top: $tablet-header-padding;
-                padding-bottom: 0;
-            }
-
-            &__icons {
-                align-self: center;
-                justify-content: space-evenly;
-                height: 25px;
-                padding-top: $tablet-header-padding;
-            }
+        &__title {
+            @include desktop-tablet-section-header;
         }
 
-        &__info {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
+        &__main {
+            padding: $tablet-padding;
+            padding-top: 0;
+            padding-bottom: $tablet-header-padding;
+    
+            &__photo {
+                @include desktop_tablet_avatar;
+            }
 
-            &__sub {
-                padding-top: $tablet-padding;
+            &__form {
+                padding-left: $tablet-padding;
+            }
 
-                &__desc {
-                    padding: $tablet-gutter-padding 0;
+        }
+
+        &__default {
+            padding: $tablet-padding;
+            padding-top: 0;
+            padding-bottom: $tablet-padding;
+
+            &__box {
+                &__image {
+                    @include desktop_tablet_avatar;
+                    background-color: $inactive-state-color;
+                }
+    
+                &__text {
+                    padding-left: $tablet-padding;
+    
+                    &__head {
+                        &--name {
+                            font-size: 14px;
+                        }
+    
+                        &--date {
+                            font-size: 14px;
+                        }
+                    }
                 }
             }
-        }
-
-        &__watermark {
-            width: 120px;
-            height: 20px;
-            padding: 0;
-            margin: 0;
-
-            position: relative;
-            bottom: 12.5rem;
-            left: 34.5rem;
         }
     }
 
     @include desktop {
         padding: $desktop-padding;
-        padding-top: 0;
 
-        &__header {
-            width: 100vw;
-            display: flex;
-            flex-direction: row;
-
-            &__title {
-                @include desktop-tablet-section-header;
-                padding-top: $desktop-header-padding;
-                padding-bottom: 0;
-                padding-left: 100px;
-                padding-right: 32px;
-            }
-
-            &__icons {
-                width: 16vw;
-                align-self: center;
-                justify-content: space-evenly;
-                height: 25px;
-                padding-top: $desktop-header-padding;
-            }
+        &__title {
+            @include desktop-tablet-section-header;
+            padding-left: 100px;
         }
 
-        &__info {
-            display: flex;
-            flex-direction: row;
-            justify-content: left;
-            padding-left: 100px;
+        &__main {
+            padding: 30vw;
+            padding-top: 0;
+            padding-bottom: $desktop-header-padding;
+            width: 50%;  
 
-            &__sub {
-                padding-top: $desktop-padding;
-                padding-right: 100px;
+            &__photo {
+                @include desktop_tablet_avatar;
+            }
 
-                &__desc {
-                    padding: $desktop-gutter-padding 0;
+            &__form {
+                padding-left: $desktop-padding;
+            }
+
+        }
+
+        &__default {
+            padding: 30vw;
+            padding-top: 0;
+            padding-bottom: $desktop-padding;
+            width: 50%;
+
+            &__box {
+                &__image {
+                    @include desktop_tablet_avatar;
+                    background-color: $inactive-state-color;
+                }
+    
+                &__text {
+                    padding-left: $desktop-padding;
+    
+                    &__head {
+                        &--name {
+                            font-size: 14px;
+                        }
+    
+                        &--date {
+                            font-size: 14px;
+                        }
+                    }
                 }
             }
-        }
-
-        &__watermark {
-            width: 120px;
-            height: 20px;
-            padding: 0;
-            margin: 0;
-
-            position: relative;
-            bottom: 12.5rem;
-            left: 62rem;
-        }
-
-        &__copyright {
-            padding-left: 100px;
         }
     }
 }

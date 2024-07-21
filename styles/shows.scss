@@ -1,0 +1,266 @@
+@use './partials/colors' as *;
+@use './partials/fonts' as *;
+@use './partials/mixins' as *;
+@use './partials/variables' as *;
+@use './partials/global' as *;
+
+table :hover {
+    background-color: $secondary-light-background-color;
+    color: $primary-dark-font-color;
+}
+
+table {
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    @include desktop {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+tr {
+    @include tablet {
+        display: flex;
+        flex-direction: row;
+        padding-top: $tablet-padding; 
+    }
+
+    @include desktop {
+        display: flex;
+        flex-direction: row;
+        padding-top: $desktop-padding; 
+    }
+
+}
+
+#header1, #header2, #header3 {
+    visibility: hidden;
+
+    @include tablet {
+        visibility: visible;
+        padding-left: $tablet-padding;
+        width: 15vw;
+        border: none;
+    }
+
+    @include desktop {
+        visibility: visible;
+        padding-left: $desktop-padding;
+        width: 10.5vw;
+        border: none;
+    }
+
+}
+
+// Hero Section
+.hero {
+    width:auto;
+    height: auto;
+
+    background-image: url(../assets/Images/hero-shows.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    &__content {
+        background-color: rgba(50, 50, 50, 0.5);
+        height: fill;
+        width: fill;
+
+        margin: 0;
+        padding: $mobile-padding;
+        align-content: center;
+        
+        &__title{
+            @include header-font;
+            color: $primary-light-font-color;
+        }
+
+        &__desc {
+            @include subheader-font;
+            color: $primary-light-font-color;
+        }
+
+        &__music {
+            padding-top: $mobile-padding;
+            padding-bottom: $mobile-padding;
+        }
+    }
+
+    @include tablet {
+        background-position: bottom;
+        width: auto;
+        height: auto;
+
+        &__content {
+            padding: $tablet-padding;
+
+            &__desc {
+                @include desktop-tablet-subheader;
+                
+            }
+
+            &__title {
+                @include desktop-tablet-page-header;
+                margin-top: 0;
+            }
+            
+            &__music {
+                width: 60%;
+                padding-bottom: $tablet-padding;
+            }
+        }
+    }
+
+    @include desktop {
+        background-size: cover;
+        background-position: center;
+        width: auto;
+        height: 65vh;
+
+        &__content {
+            padding: $desktop-padding 100px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            &__desc {
+                @include desktop-tablet-subheader;
+                
+            }
+
+            &__title {
+                @include desktop-tablet-page-header;
+                margin-top: 0;
+            }
+            
+            &__music {
+                width: 40%;
+                padding-bottom: $desktop-padding;
+            }
+        }
+    }
+}
+
+.shows {
+    &__title {
+        @include header-font;
+        padding: $mobile-padding;
+        margin-bottom: 0;
+    }
+
+    &__table {
+        padding-bottom: $mobile-padding;
+        padding-right: $mobile-padding;
+        width: 100%;
+
+        &__header {
+            @include table-header-font;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            padding-left: $mobile-padding;
+
+            &--first {
+                @extend .shows__table__header;
+                padding-top: $mobile-padding;
+            }
+        }
+
+        &__data {
+            display: flex;
+            flex-direction: column;
+            padding-left: $mobile-padding;
+            padding-right: $mobile-padding;
+            padding-bottom: $mobile-padding;
+
+            &__button {
+                @extend .shows__table__data;
+                @include button-font;
+                height: 40px;
+                border-radius: 4px;
+                background-color: $primary-dark-background-color;
+
+                padding: 0;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &--first {
+                @extend .shows__table__data;
+                font-family: avenir-bold;
+            }
+
+            &--last {
+                @extend .shows__table__data;
+                width: auto;
+                border-bottom: 1px solid $inactive-state-color;
+            }
+        }
+    }
+
+    @include tablet {
+        &__title {
+            @include desktop-tablet-section-header;
+            padding: $tablet-padding;
+            margin-bottom: 0;
+        }
+
+        &__table {
+            padding-bottom: $tablet-padding;
+            padding-right: $tablet-padding;
+            padding-left: $tablet-padding;
+
+
+            &__header {
+                visibility: hidden;
+                width: 0;
+            }
+            
+            &__data {
+                width: 20vw;
+                padding-left: 0;
+                padding-right: 0;
+                border-bottom: 1px solid $inactive-state-color;
+            }
+        }
+    }
+    
+    @include desktop {
+        display: flex;
+        flex-direction: row;
+        padding-top: $desktop-padding;
+        padding-bottom: $desktop-padding;
+
+        &__title {
+            @include desktop-tablet-section-header;
+            padding: 100px;
+            margin-bottom: 0;
+        }
+
+        &__table {
+            padding-bottom: $desktop-padding;
+            padding-right: $desktop-padding;
+            padding-left: 100px;
+
+
+            &__header {
+                visibility: hidden;
+                width: 0;
+            }
+            
+            &__data {
+                width: 14vw;
+                padding-left: 0;
+                padding-right: 0;
+                border-bottom: 1px solid $inactive-state-color;
+            }
+        }
+    }
+}

@@ -38,6 +38,34 @@
     line-height: 18px;
 }
 
+@mixin table-header-font {
+    font-family: avenir-demi;
+    font-size: 13px;
+    line-height: 18px;
+    color: $secondary-font-color;
+}
+
+@mixin button-font {
+    font-family: avenir-bold;
+    font-size: 14px;
+    line-height: 20px;
+    color: $primary-light-font-color;
+}
+
+@mixin label-font {
+    font-family: avenir-demi;
+    color: $secondary-font-color;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+@mixin desktop-tablet-label-font {
+    font-family: avenir-demi;
+    color: $secondary-font-color;
+    font-size: 14px;
+    line-height: 20px;
+}
+
 // Desktop & Tablet Text Styles
 @mixin desktop-tablet-page-header {
     font-family: avenir-bold;

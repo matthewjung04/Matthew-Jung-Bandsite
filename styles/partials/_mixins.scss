@@ -20,3 +20,25 @@
     @include hover-font;
     border-bottom: 4px solid $primary-light-font-color;
 }
+
+// Tables
+@mixin desktop_tablet_table_padding {
+    padding: 24px 18px;
+}
+
+@mixin mobile_table_padding {
+    padding: 16px;
+}
+
+// avatars
+@mixin desktop_tablet_avatar {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+}
+
+@mixin mobile_avatar {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+}                                                                                                                                                                                                                                                                                                           

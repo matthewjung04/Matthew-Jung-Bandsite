@@ -440,4 +440,54 @@ textarea:focus, input:focus {
             }
         }
     }
+
+    @include tablet {
+        padding: $tablet-padding;
+
+        &__title {
+            @include desktop-tablet-section-header;
+        }
+
+        &__main {
+            padding: $tablet-padding;
+            padding-top: 0;
+            padding-bottom: $tablet-header-padding;
+    
+            &__photo {
+                @include desktop_tablet_avatar;
+            }
+
+            &__form {
+                padding-left: $tablet-padding;
+            }
+
+        }
+
+        &__default {
+            padding: $tablet-padding;
+            padding-top: 0;
+            padding-bottom: $tablet-padding;
+
+            &__box {
+                &__image {
+                    @include desktop_tablet_avatar;
+                    background-color: $inactive-state-color;
+                }
+    
+                &__text {
+                    padding-left: $tablet-padding;
+    
+                    &__head {
+                        &--name {
+                            font-size: 14px;
+                        }
+    
+                        &--date {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

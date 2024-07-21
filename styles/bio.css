@@ -708,4 +708,47 @@ textarea:focus, input:focus {
 }
 .comments__default__box__text__head--date {
   color: #AFAFAF;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  .comments {
+    padding: 36px;
+  }
+  .comments__title {
+    font-family: avenir-bold;
+    font-size: 36px;
+    line-height: 44px;
+  }
+  .comments__main {
+    padding: 36px;
+    padding-top: 0;
+    padding-bottom: 48px;
+  }
+  .comments__main__photo {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+  }
+  .comments__main__form {
+    padding-left: 36px;
+  }
+  .comments__default {
+    padding: 36px;
+    padding-top: 0;
+    padding-bottom: 36px;
+  }
+  .comments__default__box__image {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    background-color: #E1E1E1;
+  }
+  .comments__default__box__text {
+    padding-left: 36px;
+  }
+  .comments__default__box__text__head--name, .comments__default__box__text__head--date {
+    font-size: 14px;
+  }
+  .comments__default__box__text__head--date {
+    font-size: 14px;
+  }
 }/*# sourceMappingURL=bio.css.map */

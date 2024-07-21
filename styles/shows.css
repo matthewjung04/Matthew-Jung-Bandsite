@@ -304,7 +304,18 @@ table :hover {
     display: flex;
     flex-direction: row;
     padding-top: 36px;
-    border-bottom: 1px solid #E1E1E1;
+  }
+}
+
+#header1, #header2, #header3 {
+  visibility: hidden;
+}
+@media (min-width: 768px) and (max-width: 1279px) {
+  #header1, #header2, #header3 {
+    visibility: visible;
+    padding-left: 36px;
+    width: 15vw;
+    border: none;
   }
 }
 
@@ -471,5 +482,6 @@ table :hover {
     width: 20vw;
     padding-left: 0;
     padding-right: 0;
+    border-bottom: 1px solid #E1E1E1;
   }
 }/*# sourceMappingURL=shows.css.map */

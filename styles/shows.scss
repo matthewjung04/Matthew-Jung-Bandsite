@@ -22,7 +22,18 @@ tr {
         display: flex;
         flex-direction: row;
         padding-top: $tablet-padding;
-        border-bottom: 1px solid $inactive-state-color;
+        
+    }
+}
+
+#header1, #header2, #header3 {
+    visibility: hidden;
+
+    @include tablet {
+        visibility: visible;
+        padding-left: $tablet-padding;
+        width: 15vw;
+        border: none;
     }
 }
 
@@ -196,6 +207,7 @@ tr {
                 width: 20vw;
                 padding-left: 0;
                 padding-right: 0;
+                border-bottom: 1px solid $inactive-state-color;
             }
         }
     }

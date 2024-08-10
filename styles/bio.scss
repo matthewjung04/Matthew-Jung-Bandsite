@@ -445,11 +445,14 @@ textarea:focus, input:focus {
 
                     &__button {
                         background-color: #FFFFFF;
-                        margin-right: 16px;
+                        margin-right: 48px;
                         padding: 0;
                         border: none;
                         cursor: pointer;
 
+                        &__counter {
+                            margin-left: 10px;
+                        }
                     }
                 }
             }

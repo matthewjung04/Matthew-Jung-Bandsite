@@ -716,10 +716,13 @@ textarea:focus, input:focus {
 }
 .comments__default__box__text__container__button {
   background-color: #FFFFFF;
-  margin-right: 16px;
+  margin-right: 48px;
   padding: 0;
   border: none;
   cursor: pointer;
+}
+.comments__default__box__text__container__button__counter {
+  margin-left: 10px;
 }
 @media (min-width: 768px) and (max-width: 1279px) {
   .comments {

@@ -141,8 +141,22 @@ form.addEventListener('submit', async function(e) {
             likeButtonImage.classList.add('comments__default__box__text__container__button__image');
             likeButtonImage.src = '../assets/Icons/SVG/icon-like.svg';
 
+            let likeCounter = document.createElement('span');
+            likeCounter.classList.add('comments__default__box__text__container__button__counter');
+            likeCounter.innerText = postedCommentData.likes;
+
             likeButton.appendChild(likeButtonImage);
+            likeButton.appendChild(likeCounter);
             buttonSection.appendChild(likeButton);
+
+            async function likeButtonHandler(event) {
+                event.preventDefault();
+                console.log(postedCommentData.id);
+                let likedComment = await BandSiteApiPost.likeComments(postedCommentData);
+                likeCounter.innerText = likedComment.data.likes;
+            }
+    
+            likeButton.addEventListener("click", likeButtonHandler);
 
             // Implement Delete Button
             let deleteButton = document.createElement('button');
@@ -152,7 +166,12 @@ form.addEventListener('submit', async function(e) {
             deleteButtonImage.src = '../assets/Icons/SVG/icon-delete.svg';
             deleteButtonImage.classList.add('comments__default__box__text__container__button__image');
             
+            let deleteCounter = document.createElement('span');
+            deleteCounter.classList.add('comments__default__box__text__container__button__counter');
+            deleteCounter.innerText = '0';
+
             deleteButton.appendChild(deleteButtonImage);
+            deleteButton.appendChild(deleteCounter);
             buttonSection.appendChild(deleteButton);
 
 

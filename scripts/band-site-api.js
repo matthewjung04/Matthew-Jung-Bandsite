@@ -35,12 +35,22 @@ export class BandSiteApi {
 
     // Use axios.post for new comments
     async postComments (commentObj) {
-        const postResponse = await axios.post (
+        const postResponse = await axios.post(
             (this.baseUrl + "comments/" + this.apiKey),
             {"name": commentObj.name, "comment": commentObj.comment},
             {headers: header}
         )
         return postResponse
+    }
+
+    // Use axios.put to update number of likes on a comment
+    async likeComments(data) {
+        const id = data.id;
+        const likeResponse = await axios.put(
+            (this.baseUrl + "comments/" + id + "/like/" + this.apiKey),
+            data.likes++
+        )
+        return likeResponse
     }
 }
 

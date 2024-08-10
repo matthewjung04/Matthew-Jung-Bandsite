@@ -4,32 +4,8 @@
 
 // Import data from WebAPI
 import {comments} from './band-site-api.js';
-
-// const defaultComments = {
-//     users: [
-//         'Victor Pinto',
-//         'Christina Cabrera',
-//         'Isaac Tadesse'
-//     ],
-//     comments: [
-//         'This is art. This is inexplicable magic expressed in the purest way, \
-//         everything that makes up this majestic work deserves reverence. \
-//         Let us appreciate this for what it is and what it contains.',
-
-//         'I feel blessed to have seen them in person. What a show! \
-//         They were just perfection. If there was one day of my life I could relive, \
-//         this would be it. What an incredible day.',
-
-//         "I can't stop listening. Every time I hear one of their songs - the vocals - \
-//         it gives me goosebumps. Shivers straight down my spine. \
-//         What a beautiful expression of creativity. Can't get enough."
-//     ],
-//     dates: [
-//         '11/02/2023',
-//         '10/28/2023',
-//         '10/20/2023',
-//     ]
-// };
+import {fetch} from './band-site-api.js';
+import {BandSiteApi} from './band-site-api.js';
 
 let defaultSection = document.querySelector('.comments__default');
 // avatarImage.src = "../assets/Images/Mohan-muruge.jpg";
@@ -99,30 +75,30 @@ for (let i=0; i<comments.length; i++) {
 const form = document.getElementById('myForm');
 
 
-form.addEventListener('submit', function(e) {
+form.addEventListener('submit', async function(e) {
     e.preventDefault();
 
-    // Console log form values and confimation for debugging
-    // console.log('Form Submitted');
-    // console.log(e.target.name.value);
-    // console.log(e.target.message.value);
+    // create object containing inputed user data
+    const commentInput = {
+        "name": e.target.name.value,
+        "comment": e.target.message.value
+    }
 
-    const name = e.target.name.value;
-    const message = e.target.message.value;
-    // console.log(name.length);
-    // console.log(message.split(" ").length);
+    let BandSiteApiPost = new BandSiteApi(await fetch()); // Extract data from WebAPI link
+    let postedComment = await BandSiteApiPost.postComments(commentInput); //retrieve complete comment data from axios.post
+    const postedCommentData = postedComment.data; //extract data array from axios.post
 
     const button = document.querySelector('button');
     const input = document.querySelector('input');
     const textArea = document.querySelector('textarea');
 
-    if (name.length>2) {
+    if (postedCommentData.name.length>2) {
         input.classList.remove('comment__error');
 
-        if (message.split(" ").length>=2) {
+        if (postedCommentData.comment.split(" ").length>=2) {
             textArea.classList.remove('comment__error');
-            newComment = postComment();
-            newTextBox = addTextBox(newComment);
+            let newComment = postComment();
+            let newTextBox = addTextBox(newComment);
         
             let titleBox = document.createElement('h1');
             titleBox.classList.add('comments__default__box__text__head');
@@ -130,12 +106,12 @@ form.addEventListener('submit', function(e) {
         
             let commentName = document.createElement('h2');
             commentName.classList.add('comments__default__box__text__head--name');
-            commentName.innerText = name;
+            commentName.innerText = postedCommentData.name;
             titleBox.appendChild(commentName);
             
             let commentDate = document.createElement('h2');
             commentDate.classList.add('comments__default__box__text__head--date');
-            postedDate = new Date();
+            let postedDate = new Date(postedCommentData.timestamp);
 
             function dates () {
                 var str = "";
@@ -149,10 +125,10 @@ form.addEventListener('submit', function(e) {
 
             let commentText = document.createElement('span');
             commentText.classList.add('comments__default__box__text__desc');
-            commentText.innerText = message;
+            commentText.innerText = postedCommentData.comment;
             newTextBox.appendChild(commentText);
 
-        }else if (message.split(" ").length<2) {
+        }else if (postedCommentData.comment.split(" ").length<2) {
             alert('Comment must contain more than 1 word');
             textArea.classList.add('comment__error');
             function formHandler(event) {
@@ -162,7 +138,7 @@ form.addEventListener('submit', function(e) {
 
             button.addEventListener("click", formHandler);
         }
-    }else if (name.length<=2) {
+    }else if (postedCommentData.name.length<=2) {
         alert('Name must contain more than 2 letters');
         input.classList.add('comment__error');
         function formHandler(event) {

@@ -93,10 +93,10 @@
                     <img class="comments__main__photo" src="./assets/Images/Mohan-muruge.jpg" alt="avatar-photo">
                     <form class="comments__main__form" id="myForm">
                         <label class="comments__main__form__label" for="name">NAME</label>
-                        <input type="text" class="comments__main__form__input" name="name" value="Enter your name">
+                        <input type="text" class="comments__main__form__input" name="name" placeholder="Enter your name" required>
 
                         <label class="comments__main__form__label--text" for="message">COMMENT</label>
-                        <textarea class="comments__main__form__input--text" name="message" rows="4">Add a new comment</textarea>
+                        <textarea class="comments__main__form__input--text" name="message" rows="4" placeholder="Add a new comment" required></textarea>
 
                         <button type="submit" class="comments__main__form__button" id="submit-btn">COMMENT</button>
                     </form>
@@ -105,7 +105,7 @@
             </section>
 
             <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-            <script src="./scripts/index-page.js" type="module"></script>
+            <script src="./scripts/index-page.js" defer type="module"></script>
             <script src="./scripts/band-site-api.js" defer type="module"></script>
         </main>
 

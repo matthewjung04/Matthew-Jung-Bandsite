@@ -2,31 +2,34 @@
 
 // Create object containing default comments
 
-const defaultComments = {
-    users: [
-        'Victor Pinto',
-        'Christina Cabrera',
-        'Isaac Tadesse'
-    ],
-    comments: [
-        'This is art. This is inexplicable magic expressed in the purest way, \
-        everything that makes up this majestic work deserves reverence. \
-        Let us appreciate this for what it is and what it contains.',
+// Import data from WebAPI
+import {comments} from './band-site-api.js';
 
-        'I feel blessed to have seen them in person. What a show! \
-        They were just perfection. If there was one day of my life I could relive, \
-        this would be it. What an incredible day.',
+// const defaultComments = {
+//     users: [
+//         'Victor Pinto',
+//         'Christina Cabrera',
+//         'Isaac Tadesse'
+//     ],
+//     comments: [
+//         'This is art. This is inexplicable magic expressed in the purest way, \
+//         everything that makes up this majestic work deserves reverence. \
+//         Let us appreciate this for what it is and what it contains.',
 
-        "I can't stop listening. Every time I hear one of their songs - the vocals - \
-        it gives me goosebumps. Shivers straight down my spine. \
-        What a beautiful expression of creativity. Can't get enough."
-    ],
-    dates: [
-        '11/02/2023',
-        '10/28/2023',
-        '10/20/2023',
-    ]
-};
+//         'I feel blessed to have seen them in person. What a show! \
+//         They were just perfection. If there was one day of my life I could relive, \
+//         this would be it. What an incredible day.',
+
+//         "I can't stop listening. Every time I hear one of their songs - the vocals - \
+//         it gives me goosebumps. Shivers straight down my spine. \
+//         What a beautiful expression of creativity. Can't get enough."
+//     ],
+//     dates: [
+//         '11/02/2023',
+//         '10/28/2023',
+//         '10/20/2023',
+//     ]
+// };
 
 let defaultSection = document.querySelector('.comments__default');
 // avatarImage.src = "../assets/Images/Mohan-muruge.jpg";
@@ -64,7 +67,7 @@ function addTextBox(newComment) {
     return commentBox
 }
 
-for (let i=0; i<defaultComments.users.length; i++) {
+for (let i=0; i<comments.length; i++) {
 
     let newComment = addComment();
     let newTextBox = addTextBox(newComment);
@@ -75,17 +78,21 @@ for (let i=0; i<defaultComments.users.length; i++) {
 
     let commentName = document.createElement('h2');
     commentName.classList.add('comments__default__box__text__head--name');
-    commentName.innerText = defaultComments.users[i];
+    commentName.innerText = comments[i].name;
     titleBox.appendChild(commentName);
 
     let commentDate = document.createElement('h2');
     commentDate.classList.add('comments__default__box__text__head--date');
-    commentDate.innerText = defaultComments.dates[i];
+    let dates = new Date(comments[i].timestamp);
+    let month = ("0" + (dates.getMonth()+1)).slice(-2);
+    let date = ("0" + dates.getDate()).slice(-2);
+    let year = dates.getFullYear();
+    commentDate.innerText = month + "/" + date + "/" + year;
     titleBox.appendChild(commentDate);
 
     let commentText = document.createElement('span');
     commentText.classList.add('comments__default__box__text__desc');
-    commentText.innerText = defaultComments.comments[i];
+    commentText.innerText = comments[i].comment;
     newTextBox.appendChild(commentText);
 }
 

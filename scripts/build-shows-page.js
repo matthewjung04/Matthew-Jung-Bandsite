@@ -3,27 +3,6 @@
 // Import data from WebAPI
 import {shows} from './band-site-api.js';
 
-// Create object containing shows dates, venues, and locations
-// let shows = {
-//     dates: [
-//         'Mon Sept 09 2024',
-//         'Tue Sept 17 2024',
-//         'Sat Oct 12 2024',
-//         'Sat Nov 16 2024',
-//         'Fri Nov 29 2024',
-//         'Wed Dec 18 2024'
-//     ],
-//     venues: [
-//         'Ronald Lane',
-//         'Pier 3 East',
-//         'View Lounge',
-//         'Hyatt Agency',
-//         'Moscow Center',
-//         'Press Club'
-//     ],
-//     location: 'San Francisco, CA'
-// };
-
 // Use DOM methods to add html element containing all data from shows object
 
 // Select the table html tag as parent container

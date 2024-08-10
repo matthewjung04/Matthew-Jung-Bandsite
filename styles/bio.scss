@@ -437,6 +437,21 @@ textarea:focus, input:focus {
                         color: $secondary-font-color;
                     }
                 }
+
+                &__container {
+                    display: flex;
+                    flex-direction: row;
+                    padding-top: 16px;
+
+                    &__button {
+                        background-color: #FFFFFF;
+                        margin-right: 16px;
+                        padding: 0;
+                        border: none;
+                        cursor: pointer;
+
+                    }
+                }
             }
         }
     }

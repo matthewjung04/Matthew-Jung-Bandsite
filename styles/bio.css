@@ -709,6 +709,18 @@ textarea:focus, input:focus {
 .comments__default__box__text__head--date {
   color: #AFAFAF;
 }
+.comments__default__box__text__container {
+  display: flex;
+  flex-direction: row;
+  padding-top: 16px;
+}
+.comments__default__box__text__container__button {
+  background-color: #FFFFFF;
+  margin-right: 16px;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
 @media (min-width: 768px) and (max-width: 1279px) {
   .comments {
     padding: 36px;

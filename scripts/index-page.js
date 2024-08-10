@@ -128,6 +128,34 @@ form.addEventListener('submit', async function(e) {
             commentText.innerText = postedCommentData.comment;
             newTextBox.appendChild(commentText);
 
+            // Button Section
+            let buttonSection = document.createElement('div');
+            buttonSection.classList.add('comments__default__box__text__container');
+            newTextBox.appendChild(buttonSection);
+
+            // Implement Like Button
+            let likeButton = document.createElement('button');
+            likeButton.classList.add('comments__default__box__text__container__button');
+
+            let likeButtonImage = document.createElement('img');
+            likeButtonImage.classList.add('comments__default__box__text__container__button__image');
+            likeButtonImage.src = '../assets/Icons/SVG/icon-like.svg';
+
+            likeButton.appendChild(likeButtonImage);
+            buttonSection.appendChild(likeButton);
+
+            // Implement Delete Button
+            let deleteButton = document.createElement('button');
+            deleteButton.classList.add('comments__default__box__text__container__button');
+
+            let deleteButtonImage = document.createElement('img');
+            deleteButtonImage.src = '../assets/Icons/SVG/icon-delete.svg';
+            deleteButtonImage.classList.add('comments__default__box__text__container__button__image');
+            
+            deleteButton.appendChild(deleteButtonImage);
+            buttonSection.appendChild(deleteButton);
+
+
         }else if (postedCommentData.comment.split(" ").length<2) {
             alert('Comment must contain more than 1 word');
             textArea.classList.add('comment__error');

@@ -1,19 +1,37 @@
 // Bandsite Sprint 3
 
-const url = "https://unit-2-project-api-25c1595833b2.herokuapp.com/";
+// API url link fore retrieving API key
+const apiUrl = "https://unit-2-project-api-25c1595833b2.herokuapp.com/register";
 
 const fetch = async () => {
     // Use axios.get to retreive API key
-    const apiKeyResponse = await axios.get(url + "register");
+    const apiKeyResponse = await axios.get(apiUrl);
     const apiKey = "?api_key=" + apiKeyResponse.data.api_key;
-
-    // Use axios.get to retreive comments
-    const commentsResponse = await axios.get(url + "comments/" + apiKey);
-    let [comment1, comment2, comment3] = commentsResponse.data;
-
-    // Use axios.get to retreive show dates
-    const showsResponse = await axios.get(url + "showdates/" + apiKey);
-    let [show1, show2, show3, show4, show5, show6] = showsResponse.data;
+    return apiKey;
 }
 
-fetch();
+class BandSiteApi {
+    // Set the parameters for the class as the API url and key
+    constructor(apiKey) {
+        this.baseUrl = "https://unit-2-project-api-25c1595833b2.herokuapp.com/";
+        this.apiKey = apiKey;
+    }
+
+    // Use axios.get to retreive comments
+    async getComments() {
+        const commentsResponse = await axios.get(this.baseUrl + "comments/" + this.apiKey);
+        return commentsResponse.data
+    }
+
+    // Use axios.get to retreive comments
+    async getShows() {
+        const showsResponse = await axios.get(this.baseUrl + "showdates/" + this.apiKey);
+        return showsResponse.data
+    }
+}
+
+let BandSiteApiGet = new BandSiteApi(await fetch()); // Extract data from WebAPI link
+let comments = await BandSiteApiGet.getComments(); // Extract comments object array from original data
+let shows = await BandSiteApiGet.getShows(); // Extract show times object array from original data
+// console.log(comments);
+// console.log(shows);

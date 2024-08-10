@@ -1,25 +1,28 @@
 // Script File for Shows Page
 
+// Import data from WebAPI
+import {shows} from './band-site-api.js';
+
 // Create object containing shows dates, venues, and locations
-let shows = {
-    dates: [
-        'Mon Sept 09 2024',
-        'Tue Sept 17 2024',
-        'Sat Oct 12 2024',
-        'Sat Nov 16 2024',
-        'Fri Nov 29 2024',
-        'Wed Dec 18 2024'
-    ],
-    venues: [
-        'Ronald Lane',
-        'Pier 3 East',
-        'View Lounge',
-        'Hyatt Agency',
-        'Moscow Center',
-        'Press Club'
-    ],
-    location: 'San Francisco, CA'
-};
+// let shows = {
+//     dates: [
+//         'Mon Sept 09 2024',
+//         'Tue Sept 17 2024',
+//         'Sat Oct 12 2024',
+//         'Sat Nov 16 2024',
+//         'Fri Nov 29 2024',
+//         'Wed Dec 18 2024'
+//     ],
+//     venues: [
+//         'Ronald Lane',
+//         'Pier 3 East',
+//         'View Lounge',
+//         'Hyatt Agency',
+//         'Moscow Center',
+//         'Press Club'
+//     ],
+//     location: 'San Francisco, CA'
+// };
 
 // Use DOM methods to add html element containing all data from shows object
 
@@ -36,10 +39,10 @@ function addRow() {
 }
 
 // For loop to add each corresponding date and venue to new row of the table
-for (i=0; i<shows.dates.length; i++) {
+for (let i=0; i<shows.length; i++) {
 
     // Add a new row to the table
-    newRow = addRow();
+    let newRow = addRow();
     // newRow.setAttribute("id", "row-1-" + i+1);
 
     // Create a row heading for date
@@ -51,7 +54,8 @@ for (i=0; i<shows.dates.length; i++) {
     // Add corresponding date from shows object to 'DATE' row
     let dateColumn = document.createElement('td');
     dateColumn.classList.add('shows__table__data--first');
-    dateColumn.innerText = shows.dates[i];
+    let dates = new Date(shows[i].date);
+    dateColumn.innerText = dates.toDateString();
     newRow.appendChild(dateColumn);
 
     // Create a row heading for venue
@@ -63,7 +67,7 @@ for (i=0; i<shows.dates.length; i++) {
     // Add corresponding venue from shows object to 'VENUE' row
     let venueColumn = document.createElement('td');
     venueColumn.classList.add('shows__table__data');
-    venueColumn.innerText = shows.venues[i];
+    venueColumn.innerText = shows[i].place;
     newRow.appendChild(venueColumn);
     
     // Create a row heading for location
@@ -75,7 +79,7 @@ for (i=0; i<shows.dates.length; i++) {
     // Add location 'San Francisco' from shows object to 'LOCATION' row
     let locationColumn = document.createElement('td');
     locationColumn.classList.add('shows__table__data');
-    locationColumn.innerText = shows.location;
+    locationColumn.innerText = shows[i].location;
     newRow.appendChild(locationColumn);
 
     // Create a blank bottom data row for the 'Buy Tickets' button

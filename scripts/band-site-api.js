@@ -31,7 +31,5 @@ class BandSiteApi {
 }
 
 let BandSiteApiGet = new BandSiteApi(await fetch()); // Extract data from WebAPI link
-let comments = await BandSiteApiGet.getComments(); // Extract comments object array from original data
-let shows = await BandSiteApiGet.getShows(); // Extract show times object array from original data
-// console.log(comments);
-// console.log(shows);
+export let comments = await BandSiteApiGet.getComments(); // Extract comments object array from original data
+export let shows = await BandSiteApiGet.getShows(); // Extract show times object array from original data

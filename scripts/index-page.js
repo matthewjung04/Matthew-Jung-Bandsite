@@ -64,10 +64,10 @@ function addTextBox(newComment) {
     return commentBox
 }
 
-for (i=0; i<defaultComments.users.length; i++) {
+for (let i=0; i<defaultComments.users.length; i++) {
 
-    newComment = addComment();
-    newTextBox = addTextBox(newComment);
+    let newComment = addComment();
+    let newTextBox = addTextBox(newComment);
 
     let titleBox = document.createElement('h1');
     titleBox.classList.add('comments__default__box__text__head');

@@ -22,7 +22,7 @@ for (let i=0; i<shows.length; i++) {
 
     // Add a new row to the table
     let newRow = addRow();
-    // newRow.setAttribute("id", "row-1-" + i+1);
+    newRow.setAttribute("id", "row-" + (i+1));
 
     // Create a row heading for date
     let headerDate = document.createElement('th');
@@ -81,9 +81,22 @@ for (let i=0; i<shows.length; i++) {
 let rows = document.querySelector('tr');
 
 function clickHandler (event) {
-    // console.log(event.target.parentElement);
     event.target.parentElement.style.backgroundColor = '#E1E1E1';
-    rows.removeEventListener('click', clickHandler);
+    console.log(event.target.parentElement.id)
+
+    for (let i=1; i<7; i++) {
+        let testRow = document.getElementById("row-"+i);
+        let testRowID = testRow.id;
+        console.log(testRow)
+
+        let currentRowID = event.target.parentElement.id;
+        
+        if (testRowID != currentRowID) {
+            testRow.style.backgroundColor = '#FFFFFF';
+        }else {
+            event.target.parentElement.style.backgroundColor = '#E1E1E1'; 
+        }
+    }
 }
 
 // Add event litsener to the 'tr' elements for click event

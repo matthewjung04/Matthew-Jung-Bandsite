@@ -52,6 +52,14 @@ export class BandSiteApi {
         )
         return likeResponse
     }
+
+    // Use axios.delete to delete a posted comment
+    async deleteComments(deleteData) {
+        const id = deleteData.id;
+        const deleteResponse = await axios.delete(this.baseUrl + "comments/" + id + "/" + this.apiKey);
+        
+        return deleteResponse
+    }
 }
 
 let BandSiteApiData = new BandSiteApi(await fetch()); // Extract data from WebAPI link

@@ -97,7 +97,9 @@ form.addEventListener('submit', async function(e) {
 
         if (postedCommentData.comment.split(" ").length>=2) {
             textArea.classList.remove('comment__error');
+
             let newComment = postComment();
+            newComment.setAttribute("id", postedCommentData.id);
             let newTextBox = addTextBox(newComment);
         
             let titleBox = document.createElement('h1');
@@ -151,7 +153,6 @@ form.addEventListener('submit', async function(e) {
 
             async function likeButtonHandler(event) {
                 event.preventDefault();
-                console.log(postedCommentData.id);
                 let likedComment = await BandSiteApiPost.likeComments(postedCommentData);
                 likeCounter.innerText = likedComment.data.likes;
             }
@@ -168,12 +169,20 @@ form.addEventListener('submit', async function(e) {
             
             let deleteCounter = document.createElement('span');
             deleteCounter.classList.add('comments__default__box__text__container__button__counter');
-            deleteCounter.innerText = '0';
 
             deleteButton.appendChild(deleteButtonImage);
             deleteButton.appendChild(deleteCounter);
             buttonSection.appendChild(deleteButton);
 
+            async function deleteButtonHandler(event) {
+                event.preventDefault();
+                let deleteComment = await BandSiteApiPost.deleteComments(postedCommentData);
+                let deleteID = deleteComment.data.id;
+                const commentBlock = document.getElementById(deleteID);
+                commentBlock.remove();
+            }
+    
+            deleteButton.addEventListener("click", deleteButtonHandler);
 
         }else if (postedCommentData.comment.split(" ").length<2) {
             alert('Comment must contain more than 1 word');
